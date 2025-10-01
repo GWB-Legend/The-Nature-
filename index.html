@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nature News Paper - Your Trusted News Source</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #1a365d;
+            --secondary: #e53e3e;
+            --accent: #2d3748;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --gray: #718096;
+            --success: #38a169;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2c5282;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #c53030;
+        }
+        
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .top-bar {
+            background: var(--primary);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .social-icons a {
+            margin-left: 15px;
+            color: white;
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .search-bar {
+            display: flex;
+            width: 300px;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .search-bar button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .auth-buttons a {
+            margin-left: 15px;
+            font-weight: 600;
+        }
+        
+        .auth-buttons .login {
+            color: var(--primary);
+        }
+        
+        .auth-buttons .register {
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--accent);
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-menu li {
+            position: relative;
+        }
+        
+        .nav-menu a {
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .nav-menu .has-dropdown:hover .dropdown {
+            display: block;
+        }
+        
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        
+        .dropdown a {
+            color: var(--dark);
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .dropdown a:hover {
+            background: #f5f5f5;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+        
+        .article-content {
+            padding: 20px;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .article-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+        
+        /* Sidebar */
+        .sidebar-widget {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-widget h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .trending-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .trending-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-list a {
+            display: flex;
+            align-items: center;
+        }
+        
+        .trending-number {
+            background: var(--primary);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+        
+        /* Donation Section */
+        .donation-section {
+            background: linear-gradient(to right, var(--primary), #2c5282);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .donation-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .donation-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .donation-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .donation-option {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 150px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .donation-option:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .donation-option.active {
+            background: var(--secondary);
+        }
+        
+        .donation-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        /* PDF Portal */
+        .pdf-portal {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .pdf-upload-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .pdf-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .pdf-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pdf-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-right: 15px;
+        }
+        
+        .pdf-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .pdf-meta {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* Authentication Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-button {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-button.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #4a5568;
+            color: #cbd5e0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .main-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .donation-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .donation-option {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="date">Thursday, September 28, 2023</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container main-header">
+            <div class="logo">Global<span>Times</span></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for news...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="auth-buttons">
+                <a href="#" class="login" id="loginBtn">Login</a>
+                <a href="#" class="register" id="registerBtn">Register</a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <div class="container">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">News <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Politics</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Science</a></li>
+                            <li><a href="#">Health</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">World</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Entertainment</a></li>
+                    <li><a href="#">Opinion</a></li>
+                    <li><a href="#">PDF Archives</a></li>
+                    <li><a href="#">Donate</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Breaking News: Global Summit Addresses Climate Crisis</h1>
+            <p>World leaders gather to discuss urgent measures against rising global temperatures and environmental challenges.</p>
+            <a href="#" class="btn btn-secondary">Read Full Story</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Articles Section -->
+            <div class="articles-section">
+                <h2 class="section-title">Latest News</h2>
+                <div class="articles-grid" id="articlesContainer">
+                    <!-- Articles will be loaded dynamically -->
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn" id="loadMoreBtn">Load More Articles</button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>Trending Now</h3>
+                    <ul class="trending-list">
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">1</span>
+                                <span>Tech Giant Unveils New AI Assistant</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">2</span>
+                                <span>Stock Markets Reach All-Time High</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">3</span>
+                                <span>Olympic Athlete Breaks World Record</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">4</span>
+                                <span>New Study Reveals Health Benefits of Mediterranean Diet</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">5</span>
+                                <span>Film Festival Announces Winners</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our daily newsletter for the latest updates.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your email address" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Live Updates</h3>
+                    <div id="liveUpdates">
+                        <div class="update-item">
+                            <strong>15:30</strong> - Market closes with moderate gains.
+                        </div>
+                        <div class="update-item">
+                            <strong>14:45</strong> - Press conference with the Prime Minister begins.
+                        </div>
+                        <div class="update-item">
+                            <strong>13:20</strong> - Severe weather warning issued for coastal regions.
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Donation Section -->
+        <section class="donation-section">
+            <h2>Support Independent Journalism</h2>
+            <p>Your donation helps us deliver high-quality, unbiased news to readers around the world. Help us keep the public informed.</p>
+            <a href="#" class="btn btn-secondary">Donate Now</a>
+            
+            <div class="donation-options">
+                <div class="donation-option">
+                    <div class="donation-amount">$10</div>
+                    <div>Basic Support</div>
+                </div>
+                <div class="donation-option active">
+                    <div class="donation-amount">$25</div>
+                    <div>Standard Support</div>
+                </div>
+                <div class="donation-option">
+                    <div class="donation-amount">$50</div>
+                    <div>Premium Support</div>
+                </div>
+                <div class="donation-option">
+                    <div class="donation-amount">$100</div>
+                    <div>Patron Support</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Portal -->
+        <section class="pdf-portal">
+            <h2 class="section-title">PDF Archives</h2>
+            <p>Access our collection of newspaper editions in PDF format. Registered users can also upload documents.</p>
+            
+            <div class="pdf-upload-form">
+                <h3>Upload PDF</h3>
+                <form id="pdfUploadForm">
+                    <div class="form-group">
+                        <label for="pdfTitle">Document Title</label>
+                        <input type="text" id="pdfTitle" class="form-control" placeholder="Enter document title">
+                    </div>
+                    <div class="form-group">
+                        <label for="pdfCategory">Category</label>
+                        <select id="pdfCategory" class="form-control">
+                            <option value="">Select category</option>
+                            <option value="news">News Edition</option>
+                            <option value="magazine">Magazine</option>
+                            <option value="special">Special Report</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pdfFile">Select PDF File</label>
+                        <input type="file" id="pdfFile" class="form-control" accept=".pdf">
+                    </div>
+                    <button type="submit" class="btn">Upload Document</button>
+                </form>
+            </div>
+            
+            <h3>Recent Uploads</h3>
+            <div class="pdf-list">
+                <div class="pdf-item">
+                    <div class="pdf-icon">
+                        <i class="far fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <h4>September 28, 2023 Edition</h4>
+                        <div class="pdf-meta">Uploaded: Today, 12.4 MB</div>
+                    </div>
+                </div>
+                <div class="pdf-item">
+                    <div class="pdf-icon">
+                        <i class="far fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <h4>Weekly Business Review</h4>
+                        <div class="pdf-meta">Uploaded: Yesterday, 8.7 MB</div>
+                    </div>
+                </div>
+                <div class="pdf-item">
+                    <div class="pdf-icon">
+                        <i class="far fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <h4>Special Climate Report</h4>
+                        <div class="pdf-meta">Uploaded: Sep 26, 15.2 MB</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Global Times is a leading independent news organization committed to delivering accurate, unbiased journalism to readers worldwide.</p>
+                    <div class="social-icons" style="margin-top: 15px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">World</a></li>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Technology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                        <li><a href="#">Health</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">Opinion</a></li>
+                        <li><a href="#">PDF Archives</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 News Street, Media City</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@globaltimes.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Global Times. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Login to Your Account</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="login">Login</button>
+                    <button class="tab-button" data-tab="register">Register</button>
+                </div>
+                
+                <div class="tab-content active" id="loginTab">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <input type="email" id="loginEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <input type="checkbox" id="rememberMe">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Login</button>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="registerTab">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerName">Full Name</label>
+                            <input type="text" id="registerName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email Address</label>
+                            <input type="email" id="registerEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" id="registerPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Create Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample article data
+        const articles = [
+            {
+                id: 1,
+                title: "Global Summit Addresses Climate Crisis",
+                category: "World",
+                image: "https://images.unsplash.com/photo-1569163139394-de44cb4e4a82?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                excerpt: "World leaders gather to discuss urgent measures against rising global temperatures.",
+                date: "Sep 28, 2023",
+                author: "Sarah Johnson"
+            },
+            {
+                id: 2,
+                title: "Tech Giant Unveils Revolutionary AI Assistant",
+                category: "Technology",
+                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                excerpt: "New AI system can understand and respond to complex human emotions.",
+                date: "Sep 27, 2023",
+                author: "Michael Chen"
+            },
+            {
+                id: 3,
+                title: "Stock Markets Reach All-Time High",
+                category: "Business",
+                image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                excerpt: "Investors celebrate as major indices break previous records.",
+                date: "Sep 27, 2023",
+                author: "Robert Williams"
+            },
+            {
+                id: 4,
+                title: "Olympic Athlete Breaks 20-Year-Old World Record",
+                category: "Sports",
+                image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                excerpt: "Swimmer completes 100m freestyle in record time during world championships.",
+                date: "Sep 26, 2023",
+                author: "Emma Thompson"
+            },
+            {
+                id: 5,
+                title: "Breakthrough in Renewable Energy Storage",
+                category: "Science",
+                image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                excerpt: "New battery technology could make solar power viable 24/7.",
+                date: "Sep 25, 2023",
+                author: "David Kim"
+            },
+            {
+                id: 6,
+                title: "Film Festival Announces Surprise Winners",
+                category: "Entertainment",
+                image: "https://images.unsplash.com/photo-1489599809519-364dd29bacac?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                excerpt: "Independent films dominate awards ceremony at international festival.",
+                date: "Sep 25, 2023",
+                author: "Lisa Rodriguez"
+            }
+        ];
+
+        // DOM Elements
+        const articlesContainer = document.getElementById('articlesContainer');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const authModal = document.getElementById('authModal');
+        const loginBtn = document.getElementById('loginBtn');
+        const registerBtn = document.getElementById('registerBtn');
+        const closeModal = document.getElementById('closeModal');
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        // Initialize
+        let displayedArticles = 4;
+
+        // Display articles
+        function displayArticles(count) {
+            articlesContainer.innerHTML = '';
+            for (let i = 0; i < count && i < articles.length; i++) {
+                const article = articles[i];
+                const articleElement = document.createElement('div');
+                articleElement.className = 'article-card';
+                articleElement.innerHTML = `
+                    <div class="article-image">
+                        <img src="${article.image}" alt="${article.title}">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">${article.category}</span>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p>${article.excerpt}</p>
+                        <div class="article-meta">
+                            <span>${article.date}</span>
+                            <span>By ${article.author}</span>
+                        </div>
+                    </div>
+                `;
+                articlesContainer.appendChild(articleElement);
+            }
+        }
+
+        // Load more articles
+        loadMoreBtn.addEventListener('click', () => {
+            displayedArticles += 2;
+            if (displayedArticles >= articles.length) {
+                loadMoreBtn.style.display = 'none';
+            }
+            displayArticles(displayedArticles);
+        });
+
+        // Authentication modal
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            authModal.style.display = 'flex';
+            document.getElementById('modalTitle').textContent = 'Login to Your Account';
+            switchTab('login');
+        });
+
+        registerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            authModal.style.display = 'flex';
+            document.getElementById('modalTitle').textContent = 'Create New Account';
+            switchTab('register');
+        });
+
+        closeModal.addEventListener('click', () => {
+            authModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === authModal) {
+                authModal.style.display = 'none';
+            }
+        });
+
+        // Tab switching
+        function switchTab(tabName) {
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                if (button.dataset.tab === tabName) {
+                    button.classList.add('active');
+                }
+            });
+            
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            document.getElementById(tabName + 'Tab').classList.add('active');
+        }
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                switchTab(button.dataset.tab);
+            });
+        });
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Form submissions
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Login functionality would be implemented with a backend system.');
+            authModal.style.display = 'none';
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Registration functionality would be implemented with a backend system.');
+            authModal.style.display = 'none';
+        });
+
+        document.getElementById('pdfUploadForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('PDF upload functionality would be implemented with a backend system.');
+        });
+
+        // Initialize the page
+        displayArticles(displayedArticles);
+
+        // Simulate real-time updates
+        setInterval(() => {
+            const updates = document.getElementById('liveUpdates');
+            const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            const newsItems = [
+                `${time} - Breaking: New economic policy announced`,
+                `${time} - Sports: Championship game enters final quarter`,
+                `${time} - Weather: Sunny skies expected throughout the week`
+            ];
+            const randomNews = newsItems[Math.floor(Math.random() * newsItems.length)];
+            
+            const newUpdate = document.createElement('div');
+            newUpdate.className = 'update-item';
+            newUpdate.innerHTML = `<strong>${time}</strong> - ${randomNews}`;
+            
+            updates.insertBefore(newUpdate, updates.firstChild);
+            
+            if (updates.children.length > 5) {
+                updates.removeChild(updates.lastChild);
+            }
+        }, 15000);
+    </script>
+</body>
+</html>
