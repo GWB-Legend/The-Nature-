@@ -1,0 +1,3947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE NATURE NEWSPAPER - Sierra Leone's Premier Environmental News Source</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1565c0;
+            --primary-dark: #0d47a1;
+            --primary-light: #42a5f5;
+            --secondary: #ff9800;
+            --accent: #29b6f6;
+            --light: #f5f9ff;
+            --dark: #0d47a1;
+            --text: #1a237e;
+            --gray: #78909c;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --whatsapp: #25D366;
+            --chatbot: #2196F3;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--light) 0%, #e8f0fe 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(21, 101, 192, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #f57c00;
+        }
+
+        .btn-success {
+            background: var(--success);
+        }
+
+        .btn-success:hover {
+            background: #388e3c;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+
+        .btn-chatbot {
+            background: var(--chatbot);
+            color: white;
+        }
+
+        .btn-chatbot:hover {
+            background: #1976D2;
+        }
+
+        .btn-tv {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+        }
+
+        .btn-tv:hover {
+            background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+        }
+        
+        header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .social-icons a {
+            margin-left: 15px;
+            color: white;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(21, 101, 192, 0.3);
+            border: 2px solid var(--primary);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 5px;
+        }
+        
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .search-bar {
+            display: flex;
+            width: 300px;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid var(--primary-light);
+            border-radius: 6px 0 0 6px;
+            font-size: 1rem;
+        }
+        
+        .search-bar button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 6px 6px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background: var(--primary-dark);
+        }
+        
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .user-role {
+            background: var(--success);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .auth-buttons .login {
+            color: var(--primary);
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .auth-buttons .login:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .auth-buttons .register {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .auth-buttons .register:hover {
+            background: var(--primary-dark);
+        }
+
+        .logout-btn {
+            background: var(--secondary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #f57c00;
+        }
+        
+        nav {
+            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-menu li {
+            position: relative;
+        }
+        
+        .nav-menu a {
+            color: white;
+            padding: 18px 24px;
+            display: block;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+        }
+        
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-menu .has-dropdown:hover .dropdown {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 10;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+        }
+        
+        .dropdown a {
+            color: var(--text);
+            padding: 14px 20px;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        
+        .dropdown a:hover {
+            background: var(--light);
+            color: var(--primary);
+            transform: none;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(21, 101, 192, 0.9)), 
+                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 35px;
+            max-width: 700px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+            line-height: 1.6;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+            position: relative;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .article-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        
+        .article-card:hover .article-image img {
+            transform: scale(1.1);
+        }
+        
+        .article-content {
+            padding: 25px;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .article-excerpt {
+            color: var(--gray);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .sidebar-widget h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar-widget h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .trending-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        
+        .trending-list li:hover {
+            background: var(--light);
+            padding-left: 10px;
+        }
+        
+        .trending-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-list a {
+            display: flex;
+            align-items: center;
+        }
+        
+        .trending-number {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .weather-section {
+            background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 50%, #0288d1 100%);
+            color: white;
+            padding: 50px 0;
+            margin: 50px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(41, 182, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .weather-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .weather-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .weather-region-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+        
+        .weather-region-btn.active {
+            background: white;
+            color: #0288d1;
+        }
+        
+        .weather-region-btn:hover:not(.active) {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .weather-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .weather-card {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .weather-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .weather-location {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .weather-temp {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 15px 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .weather-condition {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        
+        .weather-details {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .weather-icon {
+            font-size: 3rem;
+            margin: 15px 0;
+        }
+        
+        .tv-section {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            padding: 70px 0;
+            margin: 60px 0;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tv-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .tv-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tv-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+        }
+
+        .tv-player {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .tv-placeholder {
+            background: #000;
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tv-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #ff0000 0%, transparent 50%, #ff0000 100%);
+            opacity: 0.1;
+            animation: tvGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes tvGlow {
+            from { opacity: 0.1; }
+            to { opacity: 0.3; }
+        }
+
+        .tv-placeholder i {
+            font-size: 4rem;
+            color: #ff0000;
+            z-index: 2;
+        }
+
+        .tv-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tv-channel {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .tv-channel:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+
+        .tv-channel.active {
+            background: white;
+            color: #ff0000;
+            transform: scale(1.05);
+        }
+        
+        .donation-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 70px 0;
+            text-align: center;
+            margin: 60px 0;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(21, 101, 192, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .donation-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .donation-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .donation-section p {
+            max-width: 700px;
+            margin: 0 auto 35px;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .donation-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 35px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .donation-option {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 12px;
+            min-width: 160px;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .donation-option:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+        }
+        
+        .donation-option.active {
+            background: var(--secondary);
+            transform: scale(1.05);
+        }
+        
+        .donation-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .pdf-portal {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 50px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .pdf-admin-panel {
+            background: linear-gradient(135deg, #e8f0fe 0%, #f5f9ff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--success);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.1);
+        }
+
+        .verification-section {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--warning);
+        }
+
+        .upload-status {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            display: none;
+            font-weight: 600;
+        }
+
+        .upload-status.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+            display: block;
+        }
+
+        .upload-status.error {
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid #ffcdd2;
+            display: block;
+        }
+
+        .upload-status.info {
+            background: #e3f2fd;
+            color: #1565c0;
+            border: 1px solid #bbdefb;
+            display: block;
+        }
+        
+        .pdf-upload-form {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 35px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-input-label {
+            display: block;
+            padding: 20px;
+            background: #e9ecef;
+            border: 2px dashed #ced4da;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .file-input-label:hover {
+            background: #dee2e6;
+            border-color: var(--primary);
+        }
+
+        .file-name {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .pdf-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .pdf-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .pdf-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background: white;
+        }
+        
+        .pdf-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-right: 20px;
+        }
+        
+        .pdf-info h4 {
+            margin-bottom: 8px;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .pdf-meta {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .pdf-actions {
+            margin-left: auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .pdf-download {
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .pdf-download:hover {
+            color: var(--primary-dark);
+        }
+
+        .pdf-delete {
+            color: var(--secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .pdf-delete:hover {
+            color: #f57c00;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 50px;
+            color: var(--gray);
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        .whatsapp-section {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 70px 0;
+            margin: 60px 0;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .whatsapp-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .whatsapp-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+        }
+
+        .whatsapp-details {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-info {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px 0;
+        }
+
+        .contact-item i {
+            width: 35px;
+            font-size: 1.3rem;
+        }
+
+        .whatsapp-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-button {
+            width: 65px;
+            height: 65px;
+            background: var(--chatbot);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 6px 25px rgba(33, 150, 243, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse-chat 2s infinite;
+            border: none;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(33, 150, 243, 0.7);
+        }
+
+        @keyframes pulse-chat {
+            0% {
+                box-shadow: 0 6px 25px rgba(33, 150, 243, 0.5);
+            }
+            50% {
+                box-shadow: 0 6px 30px rgba(33, 150, 243, 0.8);
+            }
+            100% {
+                box-shadow: 0 6px 25px rgba(33, 150, 243, 0.5);
+            }
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(90deg, var(--chatbot) 0%, #1976D2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #fafafa;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.4;
+            animation: messageAppear 0.3s ease;
+        }
+
+        @keyframes messageAppear {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bot-message {
+            background: white;
+            border: 1px solid #e0e0e0;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .user-message {
+            background: var(--chatbot);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chatbot-input {
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+            background: white;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 25px;
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        .chatbot-input input:focus {
+            border-color: var(--chatbot);
+        }
+
+        .chatbot-send {
+            background: var(--chatbot);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .chatbot-send:hover {
+            background: #1976D2;
+        }
+
+        .quick-questions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .quick-question {
+            background: var(--light);
+            border: 1px solid var(--primary-light);
+            color: var(--text);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quick-question:hover {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: var(--whatsapp);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 6px 30px rgba(37, 211, 102, 0.8);
+            }
+            100% {
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            animation: modalAppear 0.4s ease;
+        }
+
+        @keyframes modalAppear {
+            from { opacity: 0; transform: scale(0.9) translateY(-20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        
+        .modal-header {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .close-modal:hover {
+            transform: scale(1.1);
+        }
+        
+        .modal-body {
+            padding: 35px;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .tab-button {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tab-button.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        .role-selection {
+            margin: 20px 0;
+        }
+
+        .role-option {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .role-option:hover {
+            border-color: var(--primary-light);
+            background: #f1f8e9;
+        }
+
+        .role-option.selected {
+            border-color: var(--primary);
+            background: #e8f5e8;
+        }
+
+        .role-option input {
+            margin-right: 15px;
+        }
+        
+        /* Admin Panel Styles */
+        .admin-panel {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border: 1px solid #e1e5e9;
+            max-width: 100%;
+            overflow: visible;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .admin-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .admin-tab {
+            padding: 12px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            color: var(--gray);
+            border-radius: 6px 6px 0 0;
+            font-size: 0.9rem;
+        }
+
+        .admin-tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+            background: rgba(21, 101, 192, 0.05);
+        }
+
+        .admin-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .admin-content.active {
+            display: block;
+        }
+
+        .admin-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border: 1px solid #e8ecef;
+        }
+
+        .admin-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e8ecef;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .content-list {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .content-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #e8ecef;
+            transition: background 0.3s;
+        }
+
+        .content-item:hover {
+            background: #f8f9fa;
+        }
+
+        .content-item:last-child {
+            border-bottom: none;
+        }
+
+        .content-info h4 {
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .content-meta {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .content-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #1b5e20 100%);
+            color: white;
+            padding: 70px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #e0e0e0;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 20px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .weather-display {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
+            }
+
+            .tv-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .main-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .search-bar {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .auth-buttons {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .user-info {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .whatsapp-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+
+            .chatbot-container {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .chatbot-button {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+            }
+
+            .chatbot-window {
+                width: 280px;
+                height: 400px;
+                bottom: 75px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .pdf-portal {
+                padding: 30px 20px;
+            }
+
+            .tv-placeholder {
+                height: 200px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-tabs {
+                flex-direction: column;
+            }
+            
+            .admin-tab {
+                border-radius: 6px;
+                margin-bottom: 5px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .donation-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .donation-option {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .weather-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pdf-list {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-details {
+                padding: 20px;
+            }
+
+            .modal-body {
+                padding: 25px;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .logo-text {
+                font-size: 1.8rem;
+            }
+
+            .chatbot-window {
+                width: 260px;
+                height: 380px;
+                left: -10px;
+            }
+
+            .tv-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-button" id="chatbotButton">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    Nature News Assistant
+                </div>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Hello! I'm your Nature News assistant. How can I help you today?
+                    <div class="quick-questions">
+                        <div class="quick-question" onclick="askQuestion('What is The Nature Newspaper?')">What is The Nature Newspaper?</div>
+                        <div class="quick-question" onclick="askQuestion('How can I subscribe?')">How can I subscribe?</div>
+                        <div class="quick-question" onclick="askQuestion('Where are you located?')">Where are you located?</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message...">
+                <button class="chatbot-send" id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="date" id="currentDate">Loading date...</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/TheNatureNewspaper/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/thenaturenewspaper/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@TheNatureNewspaper" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://twitter.com/NatureNewsSL" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/23278903355" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container main-header">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/80x80/1565c0/ffffff?text=TNN" alt="THE NATURE NEWSPAPER">
+                </div>
+                <div class="logo-text">THE NATURE <span>NEWSPAPER</span></div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for news...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="auth-buttons" id="authButtons">
+                <!-- Dynamic content based on login status -->
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <div class="container">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">News <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Research</a></li>
+                            <li><a href="#">Climate Technology</a></li>
+                            <li><a href="#">Deforestation Disaster</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">World</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Event</a></li>
+                    <li><a href="#" id="tvBtn">TV</a></li>
+                    <li><a href="#">PDF Archives</a></li>
+                    <li><a href="#" id="weatherBtn">Weather Forecast</a></li>
+                    <li><a href="#" onclick="scrollToWhatsApp(); return false;">Contact Us</a></li>
+                    <li><a href="#">Donate</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Global Climate Summit Reaches Historic Agreement</h1>
+            <p>World leaders unite on ambitious climate targets and sustainable development goals at the annual environmental summit in Paris.</p>
+            <a href="#" class="btn btn-secondary">Read Full Story</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Articles Section -->
+            <div class="articles-section">
+                <h2 class="section-title">Latest Environmental News</h2>
+                <div class="articles-grid" id="articlesContainer">
+                    <!-- Articles will be loaded dynamically -->
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn" id="loadMoreBtn">Load More Articles</button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>Trending Now</h3>
+                    <ul class="trending-list">
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">1</span>
+                                <span>Breakthrough in Carbon Capture Technology</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">2</span>
+                                <span>Amazon Rainforest Protection Initiative</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">3</span>
+                                <span>Renewable Energy Investments Soar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">4</span>
+                                <span>Wildlife Conservation Success Stories</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="trending-number">5</span>
+                                <span>Climate Education in Schools</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our daily newsletter for the latest environmental updates.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your email address" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Live Updates</h3>
+                    <div id="liveUpdates">
+                        <div class="update-item">
+                            <strong>15:30</strong> - New marine protected area established.
+                        </div>
+                        <div class="update-item">
+                            <strong>14:45</strong> - Climate conference begins opening ceremonies.
+                        </div>
+                        <div class="update-item">
+                            <strong>13:20</strong> - Solar farm project approved in Western Region.
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Admin Panel (Visible only to admin users) -->
+        <div class="admin-panel" id="adminPanel" style="display: none;">
+            <div class="admin-header">
+                <h2 class="section-title" style="margin: 0;">Admin Dashboard</h2>
+                <div class="user-info">
+                    <span id="adminWelcome">Welcome, Admin</span>
+                    <span class="user-role">Administrator</span>
+                </div>
+            </div>
+            
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="articlesCount">0</div>
+                    <div class="stat-label">Articles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pdfsCount">0</div>
+                    <div class="stat-label">PDF Documents</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="usersCount">0</div>
+                    <div class="stat-label">Registered Users</div>
+                </div>
+            </div>
+            
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="news">Manage News</button>
+                <button class="admin-tab" data-tab="pdf">Manage PDFs</button>
+                <button class="admin-tab" data-tab="users">User Management</button>
+                <button class="admin-tab" data-tab="settings">Settings</button>
+            </div>
+            
+            <div class="admin-content active" id="newsTab">
+                <div class="admin-section">
+                    <h3><i class="fas fa-plus-circle"></i> Add New Article</h3>
+                    <form id="newsForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="articleTitle">Article Title *</label>
+                                <input type="text" id="articleTitle" class="form-control" placeholder="Enter article title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="articleCategory">Category *</label>
+                                <select id="articleCategory" class="form-control" required>
+                                    <option value="">Select category</option>
+                                    <option value="Research">Research</option>
+                                    <option value="Climate Technology">Climate Technology</option>
+                                    <option value="Deforestation Disaster">Deforestation Disaster</option>
+                                    <option value="World">World</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Event">Event</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="articleImage">Image URL *</label>
+                                <input type="text" id="articleImage" class="form-control" placeholder="Enter image URL" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="articleAuthor">Author *</label>
+                                <input type="text" id="articleAuthor" class="form-control" placeholder="Enter author name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="articleExcerpt">Excerpt *</label>
+                            <textarea id="articleExcerpt" class="form-control" rows="3" placeholder="Enter article excerpt (max 200 characters)" maxlength="200" required></textarea>
+                            <small style="color: var(--gray);">Characters: <span id="excerptCount">0</span>/200</small>
+                        </div>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-plus"></i> Add Article
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="admin-section">
+                    <h3><i class="fas fa-newspaper"></i> Existing Articles</h3>
+                    <div class="content-list" id="adminArticlesList">
+                        <!-- Articles will be listed here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-content" id="pdfTab">
+                <div class="admin-section">
+                    <h3><i class="fas fa-plus-circle"></i> Add New PDF</h3>
+                    <form id="adminPdfForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="adminPdfTitle">Document Title *</label>
+                                <input type="text" id="adminPdfTitle" class="form-control" placeholder="Enter document title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminPdfCategory">Category *</label>
+                                <select id="adminPdfCategory" class="form-control" required>
+                                    <option value="">Select category</option>
+                                    <option value="research">Research Paper</option>
+                                    <option value="climate">Climate Report</option>
+                                    <option value="conservation">Conservation Study</option>
+                                    <option value="news">News Edition</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="adminPdfUrl">PDF URL *</label>
+                                <input type="text" id="adminPdfUrl" class="form-control" placeholder="Enter PDF URL" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminPdfSize">File Size *</label>
+                                <input type="text" id="adminPdfSize" class="form-control" placeholder="Enter file size (e.g., 2.5 MB)" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-plus"></i> Add PDF
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="admin-section">
+                    <h3><i class="fas fa-file-pdf"></i> Existing PDFs</h3>
+                    <div class="content-list" id="adminPdfList">
+                        <!-- PDFs will be listed here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-content" id="usersTab">
+                <div class="admin-section">
+                    <h3><i class="fas fa-users"></i> User Management</h3>
+                    <div class="content-list" id="adminUsersList">
+                        <!-- Users will be listed here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-content" id="settingsTab">
+                <div class="admin-section">
+                    <h3><i class="fas fa-cog"></i> Website Settings</h3>
+                    <form id="settingsForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="siteTitle">Site Title</label>
+                                <input type="text" id="siteTitle" class="form-control" value="THE NATURE NEWSPAPER">
+                            </div>
+                            <div class="form-group">
+                                <label for="siteSlogan">Site Slogan</label>
+                                <input type="text" id="siteSlogan" class="form-control" value="Sierra Leone's Premier Environmental News Source">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="siteDescription">Site Description</label>
+                            <textarea id="siteDescription" class="form-control" rows="3">The Nature News is a leading environmental news organization committed to delivering accurate, unbiased journalism about our planet's health.</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Save Settings</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Employee PDF Panel (Visible only to employees) -->
+        <div class="pdf-admin-panel" id="employeePanel" style="display: none;">
+            <h3><i class="fas fa-user-shield"></i> Employee Upload Panel</h3>
+            <p>Secure PDF upload requires employee verification. Please enter the verification code to upload documents.</p>
+            
+            <div class="verification-section" id="verificationSection">
+                <h4><i class="fas fa-shield-alt"></i> Employee Verification</h4>
+                <div class="form-group">
+                    <label for="verificationCode">Verification Code</label>
+                    <input type="text" id="verificationCode" class="form-control" placeholder="Enter employee verification code">
+                </div>
+                <button class="btn" onclick="verifyEmployee()">Verify Employee</button>
+            </div>
+            
+            <div id="uploadSection" style="display: none;">
+                <div class="upload-status info" id="employeeStatus">
+                    <i class="fas fa-check-circle"></i> Employee verified successfully. You can now upload PDFs.
+                </div>
+                <div class="upload-status" id="uploadStatus"></div>
+                <div class="pdf-upload-form">
+                    <form id="pdfUploadForm">
+                        <div class="form-group">
+                            <label for="pdfTitle">Document Title</label>
+                            <input type="text" id="pdfTitle" class="form-control" placeholder="Enter document title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pdfCategory">Category</label>
+                            <select id="pdfCategory" class="form-control" required>
+                                <option value="">Select category</option>
+                                <option value="research">Research Paper</option>
+                                <option value="climate">Climate Report</option>
+                                <option value="conservation">Conservation Study</option>
+                                <option value="news">News Edition</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pdfFile">Select PDF File</label>
+                            <div class="file-input-wrapper">
+                                <input type="file" id="pdfFile" class="form-control" accept=".pdf" required>
+                                <div class="file-input-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <div>Click to upload PDF file</div>
+                                    <div class="file-name" id="fileName">No file chosen</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-upload"></i> Upload Document
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- TV Section -->
+        <section class="tv-section" id="tvSection">
+            <div class="container">
+                <div class="tv-content">
+                    <div class="tv-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h2>The Nature News TV</h2>
+                    <p>Watch our latest environmental documentaries, news reports, and exclusive interviews</p>
+                    
+                    <div class="tv-player">
+                        <div class="tv-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="tv-controls">
+                            <div class="tv-channel active" data-channel="news">News Channel</div>
+                            <div class="tv-channel" data-channel="documentary">Documentaries</div>
+                            <div class="tv-channel" data-channel="interview">Interviews</div>
+                            <div class="tv-channel" data-channel="live">Live Events</div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-tv">
+                        <i class="fas fa-play"></i> Watch Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather Forecast Section -->
+        <section class="weather-section" id="weatherSection">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px; color: white;">Live Global Weather Forecast</h2>
+                
+                <div class="weather-controls">
+                    <button class="weather-region-btn active" data-region="freetown">Freetown</button>
+                    <button class="weather-region-btn" data-region="western">Western Area</button>
+                    <button class="weather-region-btn" data-region="eastern">Eastern Region</button>
+                    <button class="weather-region-btn" data-region="northern">Northern Region</button>
+                    <button class="weather-region-btn" data-region="southern">Southern Region</button>
+                    <button class="weather-region-btn" data-region="asia">Asia</button>
+                    <button class="weather-region-btn" data-region="america">America</button>
+                    <button class="weather-region-btn" data-region="europe">Europe</button>
+                    <button class="weather-region-btn" data-region="world">World</button>
+                </div>
+
+                <div class="weather-display" id="weatherDisplay">
+                    <!-- Weather data will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Portal -->
+        <section class="pdf-portal">
+            <h2 class="section-title">PDF Archives</h2>
+            <p>Access our collection of environmental reports and newspaper editions in PDF format.</p>
+            
+            <h3>Available Documents</h3>
+            <div class="pdf-list" id="pdfListContainer">
+                <!-- PDF items will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- WhatsApp Contact Section -->
+        <section class="whatsapp-section" id="whatsappSection">
+            <div class="container">
+                <div class="whatsapp-content">
+                    <div class="whatsapp-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h2>Contact Us on WhatsApp</h2>
+                    <p>Get in touch with us directly through WhatsApp for quick responses and inquiries</p>
+                    
+                    <div class="whatsapp-details">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span><strong>Phone:</strong> (078) 903355</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Address:</strong> 48 Siaka Stevens Street, Freetown, Sierra Leone, West Africa</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Business Hours:</strong> Mon-Fri: 8:00 AM - 6:00 PM</span>
+                            </div>
+                        </div>
+                        
+                        <p style="text-align: center; margin: 20px 0; font-style: italic;">
+                            We're here to help! Message us for inquiries, subscriptions, or advertising opportunities.
+                        </p>
+                    </div>
+
+                    <div class="whatsapp-buttons">
+                        <button class="btn btn-whatsapp" onclick="openWhatsApp()">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </button>
+                        <button class="btn" onclick="callPhone()">
+                            <i class="fas fa-phone"></i> Call Now
+                        </button>
+                        <button class="btn btn-secondary" onclick="openLocation()">
+                            <i class="fas fa-map-marker-alt"></i> Get Directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Section -->
+        <section class="donation-section">
+            <h2>Support Environmental Journalism</h2>
+            <p>Your donation helps us deliver high-quality, unbiased environmental news to readers around the world. Help us protect our planet.</p>
+            <a href="#" class="btn btn-secondary">Donate Now</a>
+            
+            <div class="donation-options">
+                <div class="donation-option">
+                    <div class="donation-amount">$10</div>
+                    <div>Basic Support</div>
+                </div>
+                <div class="donation-option active">
+                    <div class="donation-amount">$25</div>
+                    <div>Standard Support</div>
+                </div>
+                <div class="donation-option">
+                    <div class="donation-amount">$50</div>
+                    <div>Premium Support</div>
+                </div>
+                <div class="donation-option">
+                    <div class="donation-amount">$100</div>
+                    <div>Patron Support</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>The Nature News is a leading environmental news organization committed to delivering accurate, unbiased journalism about our planet's health.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/TheNatureNewspaper/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/thenaturenewspaper/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@TheNatureNewspaper" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com/NatureNewsSL" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/23278903355" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Climate Technology</a></li>
+                        <li><a href="#">Deforestation</a></li>
+                        <li><a href="#">Weather Forecast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Event</a></li>
+                        <li><a href="#">Health</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#" id="tvFooterBtn">TV</a></li>
+                        <li><a href="#">PDF Archives</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 48 Siaka Stevens Street, Freetown</li>
+                        <li><i class="fas fa-phone"></i> (078) 903355</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp: (078) 903355</li>
+                        <li><i class="fas fa-envelope"></i> info@naturenews.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 THE NATURE NEWSPAPER. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Login to Your Account</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="login">Login</button>
+                    <button class="tab-button" data-tab="register">Register</button>
+                </div>
+                
+                <div class="tab-content active" id="loginTab">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <input type="email" id="loginEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <input type="checkbox" id="rememberMe">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" id="forgotPassword">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Login</button>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="registerTab">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerName">Full Name</label>
+                            <input type="text" id="registerName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email Address</label>
+                            <input type="email" id="registerEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" id="registerPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group role-selection">
+                            <label>Account Type</label>
+                            <div class="role-option" onclick="selectRole('reader')">
+                                <input type="radio" name="role" value="reader" checked>
+                                <div>
+                                    <strong>Reader</strong>
+                                    <div style="font-size: 0.9rem; color: var(--gray);">Read articles and download PDFs</div>
+                                </div>
+                            </div>
+                            <div class="role-option" onclick="selectRole('employee')">
+                                <input type="radio" name="role" value="employee">
+                                <div>
+                                    <strong>Employee</strong>
+                                    <div style="font-size: 0.9rem; color: var(--gray);">Upload and manage PDF documents</div>
+                                </div>
+                            </div>
+                            <div class="role-option" onclick="selectRole('admin')">
+                                <input type="radio" name="role" value="admin">
+                                <div>
+                                    <strong>Administrator</strong>
+                                    <div style="font-size: 0.9rem; color: var(--gray);">Full access to manage all content</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Create Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fixed Admin Login System
+        const ADMIN_CREDENTIALS = {
+            email: "admin@naturenews.com",
+            password: "NatureAdmin2024!"
+        };
+
+        // Chatbot functionality
+        const chatbotButton = document.getElementById('chatbotButton');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotClose = document.getElementById('chatbotClose');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotSend = document.getElementById('chatbotSend');
+
+        // Chatbot responses
+        const chatbotResponses = {
+            'hello': 'Hello! How can I help you with The Nature Newspaper today?',
+            'hi': 'Hi there! What can I assist you with?',
+            'what is the nature newspaper': 'The Nature Newspaper is Sierra Leone\'s premier environmental news organization dedicated to delivering accurate, unbiased journalism about our planet\'s health, climate change, conservation, and sustainable development.',
+            'how can i subscribe': 'You can subscribe to our newsletter using the form in the sidebar, or contact us via WhatsApp for premium subscription options.',
+            'where are you located': 'We are located at 48 Siaka Stevens Street, Freetown, Sierra Leone, West Africa.',
+            'contact': 'You can reach us via WhatsApp at (078) 903355, or visit our office at 48 Siaka Stevens Street, Freetown.',
+            'weather': 'You can check our live weather forecast in the Weather Forecast section of our website.',
+            'pdf': 'You can access our PDF archives in the PDF Archives section. Employees can upload documents after verification.',
+            'donate': 'You can support our environmental journalism by donating in the Support Environmental Journalism section.',
+            'tv': 'You can watch our environmental content on The Nature News TV section with multiple channels available.',
+            'default': 'I\'m sorry, I didn\'t understand that. You can ask me about our newspaper, subscriptions, location, weather, PDF archives, TV, or how to contact us.'
+        };
+
+        // Toggle chatbot window
+        chatbotButton.addEventListener('click', () => {
+            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        chatbotClose.addEventListener('click', () => {
+            chatbotWindow.style.display = 'none';
+        });
+
+        // Send message function
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                chatbotInput.value = '';
+                
+                // Simulate typing delay
+                setTimeout(() => {
+                    const response = getBotResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000);
+            }
+        }
+
+        // Send message on button click
+        chatbotSend.addEventListener('click', sendMessage);
+
+        // Send message on Enter key
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        // Get bot response
+        function getBotResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            for (const [key, response] of Object.entries(chatbotResponses)) {
+                if (lowerMessage.includes(key)) {
+                    return response;
+                }
+            }
+            
+            return chatbotResponses.default;
+        }
+
+        // Quick question function
+        function askQuestion(question) {
+            chatbotInput.value = question;
+            sendMessage();
+        }
+
+        // WhatsApp functionality
+        function openWhatsApp() {
+            const phoneNumber = "078903355";
+            const message = "Hello Nature News! I would like to get more information about your services.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        function callPhone() {
+            const phoneNumber = "078903355";
+            window.open(`tel:${phoneNumber}`, '_self');
+        }
+
+        function openLocation() {
+            const address = "48 Siaka Stevens Street, Freetown, Sierra Leone, West Africa";
+            const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+            window.open(url, '_blank');
+        }
+
+        function scrollToWhatsApp() {
+            document.getElementById('whatsappSection').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // TV functionality
+        const tvBtn = document.getElementById('tvBtn');
+        const tvSection = document.getElementById('tvSection');
+        const tvFooterBtn = document.getElementById('tvFooterBtn');
+        const tvChannels = document.querySelectorAll('.tv-channel');
+
+        tvBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            tvSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        tvFooterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            tvSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        tvChannels.forEach(channel => {
+            channel.addEventListener('click', () => {
+                tvChannels.forEach(c => c.classList.remove('active'));
+                channel.classList.add('active');
+                
+                const channelType = channel.getAttribute('data-channel');
+                const placeholder = document.querySelector('.tv-placeholder i');
+                
+                // Change icon based on channel
+                switch(channelType) {
+                    case 'news':
+                        placeholder.className = 'fas fa-newspaper';
+                        break;
+                    case 'documentary':
+                        placeholder.className = 'fas fa-film';
+                        break;
+                    case 'interview':
+                        placeholder.className = 'fas fa-microphone';
+                        break;
+                    case 'live':
+                        placeholder.className = 'fas fa-broadcast-tower';
+                        break;
+                }
+            });
+        });
+
+        // Employee verification codes (in a real app, this would be server-side)
+        const employeeCodes = ["TNN2024", "NATURE123", "GREEN456", "EMP789TNN"];
+        let isEmployeeVerified = false;
+
+        function verifyEmployee() {
+            const code = document.getElementById('verificationCode').value.trim();
+            if (employeeCodes.includes(code)) {
+                isEmployeeVerified = true;
+                document.getElementById('verificationSection').style.display = 'none';
+                document.getElementById('uploadSection').style.display = 'block';
+                document.getElementById('employeeStatus').style.display = 'block';
+            } else {
+                alert('Invalid verification code. Please try again.');
+            }
+        }
+
+        // Data Storage using localStorage
+        class DataStorage {
+            static getUsers() {
+                return JSON.parse(localStorage.getItem('natureNewsUsers')) || [];
+            }
+
+            static saveUsers(users) {
+                localStorage.setItem('natureNewsUsers', JSON.stringify(users));
+            }
+
+            static getArticles() {
+                return JSON.parse(localStorage.getItem('natureNewsArticles')) || [];
+            }
+
+            static saveArticles(articles) {
+                localStorage.setItem('natureNewsArticles', JSON.stringify(articles));
+            }
+
+            static getPDFs() {
+                return JSON.parse(localStorage.getItem('natureNewsPDFs')) || [];
+            }
+
+            static savePDFs(pdfs) {
+                localStorage.setItem('natureNewsPDFs', JSON.stringify(pdfs));
+            }
+
+            static getCurrentUser() {
+                return JSON.parse(localStorage.getItem('natureNewsCurrentUser'));
+            }
+
+            static setCurrentUser(user) {
+                if (user) {
+                    localStorage.setItem('natureNewsCurrentUser', JSON.stringify(user));
+                } else {
+                    localStorage.removeItem('natureNewsCurrentUser');
+                }
+            }
+        }
+
+        // Sample article data
+        const defaultArticles = [
+            {
+                id: 1,
+                title: "Global Climate Summit Reaches Historic Agreement",
+                category: "Research",
+                image: "https://images.unsplash.com/photo-1569163139394-de44cb4e4a82?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                excerpt: "World leaders unite on ambitious climate targets and sustainable development goals at the annual environmental summit.",
+                date: new Date().toLocaleDateString(),
+                author: "Sarah Johnson"
+            },
+            {
+                id: 2,
+                title: "Breakthrough in Carbon Capture Technology",
+                category: "Climate Technology",
+                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                excerpt: "New system captures 90% of carbon emissions from industrial plants, revolutionizing climate change mitigation.",
+                date: new Date(Date.now() - 86400000).toLocaleDateString(),
+                author: "Michael Chen"
+            },
+            {
+                id: 3,
+                title: "Amazon Deforestation Rates Drop by 40%",
+                category: "Deforestation Disaster",
+                image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                excerpt: "Conservation efforts show significant progress in protecting the world's largest rainforest.",
+                date: new Date(Date.now() - 172800000).toLocaleDateString(),
+                author: "Robert Williams"
+            }
+        ];
+
+        // Enhanced Live Weather Data with Sequential Updates for Sierra Leone and Global Regions
+        const weatherData = {
+            freetown: [
+                { 
+                    location: "Freetown Central", 
+                    temp: 28, 
+                    condition: "Partly Cloudy", 
+                    humidity: 78, 
+                    wind: 12,
+                    icon: "fa-cloud-sun"
+                },
+                { 
+                    location: "Lumley Beach", 
+                    temp: 29, 
+                    condition: "Sunny", 
+                    humidity: 75, 
+                    wind: 14,
+                    icon: "fa-sun"
+                }
+            ],
+            western: [
+                { 
+                    location: "Waterloo", 
+                    temp: 27, 
+                    condition: "Cloudy", 
+                    humidity: 80, 
+                    wind: 10,
+                    icon: "fa-cloud"
+                },
+                { 
+                    location: "Hastings", 
+                    temp: 26, 
+                    condition: "Light Rain", 
+                    humidity: 85, 
+                    wind: 8,
+                    icon: "fa-cloud-rain"
+                }
+            ],
+            eastern: [
+                { 
+                    location: "Kenema", 
+                    temp: 25, 
+                    condition: "Rainy", 
+                    humidity: 88, 
+                    wind: 6,
+                    icon: "fa-cloud-rain"
+                },
+                { 
+                    location: "Koidu", 
+                    temp: 24, 
+                    condition: "Thunderstorm", 
+                    humidity: 90, 
+                    wind: 5,
+                    icon: "fa-bolt"
+                }
+            ],
+            northern: [
+                { 
+                    location: "Makeni", 
+                    temp: 26, 
+                    condition: "Partly Cloudy", 
+                    humidity: 82, 
+                    wind: 9,
+                    icon: "fa-cloud-sun"
+                },
+                { 
+                    location: "Kabala", 
+                    temp: 23, 
+                    condition: "Cloudy", 
+                    humidity: 85, 
+                    wind: 7,
+                    icon: "fa-cloud"
+                }
+            ],
+            southern: [
+                { 
+                    location: "Bo", 
+                    temp: 27, 
+                    condition: "Sunny", 
+                    humidity: 77, 
+                    wind: 11,
+                    icon: "fa-sun"
+                },
+                { 
+                    location: "Bonthe", 
+                    temp: 29, 
+                    condition: "Partly Cloudy", 
+                    humidity: 76, 
+                    wind: 13,
+                    icon: "fa-cloud-sun"
+                }
+            ],
+            asia: [
+                { 
+                    location: "Tokyo, Japan", 
+                    temp: 22, 
+                    condition: "Clear", 
+                    humidity: 60, 
+                    wind: 8,
+                    icon: "fa-sun"
+                },
+                { 
+                    location: "Beijing, China", 
+                    temp: 18, 
+                    condition: "Smog", 
+                    humidity: 70, 
+                    wind: 5,
+                    icon: "fa-smog"
+                }
+            ],
+            america: [
+                { 
+                    location: "New York, USA", 
+                    temp: 15, 
+                    condition: "Cloudy", 
+                    humidity: 65, 
+                    wind: 15,
+                    icon: "fa-cloud"
+                },
+                { 
+                    location: "Los Angeles, USA", 
+                    temp: 24, 
+                    condition: "Sunny", 
+                    humidity: 45, 
+                    wind: 10,
+                    icon: "fa-sun"
+                }
+            ],
+            europe: [
+                { 
+                    location: "London, UK", 
+                    temp: 12, 
+                    condition: "Rainy", 
+                    humidity: 85, 
+                    wind: 18,
+                    icon: "fa-cloud-rain"
+                },
+                { 
+                    location: "Paris, France", 
+                    temp: 14, 
+                    condition: "Cloudy", 
+                    humidity: 75, 
+                    wind: 12,
+                    icon: "fa-cloud"
+                }
+            ],
+            world: [
+                { 
+                    location: "Global Average", 
+                    temp: 16, 
+                    condition: "Varied", 
+                    humidity: 65, 
+                    wind: 12,
+                    icon: "fa-globe-americas"
+                },
+                { 
+                    location: "Climate Change Index", 
+                    temp: "+1.2°C", 
+                    condition: "Warning", 
+                    humidity: "N/A", 
+                    wind: "N/A",
+                    icon: "fa-exclamation-triangle"
+                }
+            ]
+        };
+
+        // DOM Elements
+        const articlesContainer = document.getElementById('articlesContainer');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const authModal = document.getElementById('authModal');
+        const authButtons = document.getElementById('authButtons');
+        const closeModal = document.getElementById('closeModal');
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const weatherBtn = document.getElementById('weatherBtn');
+        const weatherSection = document.getElementById('weatherSection');
+        const weatherDisplay = document.getElementById('weatherDisplay');
+        const weatherRegionBtns = document.querySelectorAll('.weather-region-btn');
+        const employeePanel = document.getElementById('employeePanel');
+        const adminPanel = document.getElementById('adminPanel');
+        const pdfListContainer = document.getElementById('pdfListContainer');
+        const pdfUploadForm = document.getElementById('pdfUploadForm');
+        const uploadStatus = document.getElementById('uploadStatus');
+        const pdfFileInput = document.getElementById('pdfFile');
+        const fileName = document.getElementById('fileName');
+        const currentDateElement = document.getElementById('currentDate');
+        const adminTabs = document.querySelectorAll('.admin-tab');
+        const adminContents = document.querySelectorAll('.admin-content');
+        const newsForm = document.getElementById('newsForm');
+        const adminPdfForm = document.getElementById('adminPdfForm');
+        const adminArticlesList = document.getElementById('adminArticlesList');
+        const adminPdfList = document.getElementById('adminPdfList');
+        const adminUsersList = document.getElementById('adminUsersList');
+        const settingsForm = document.getElementById('settingsForm');
+        const excerptCount = document.getElementById('excerptCount');
+
+        // Initialize
+        let displayedArticles = 3;
+        let currentUser = DataStorage.getCurrentUser();
+        let currentWeatherRegion = 'freetown';
+        let weatherUpdateInterval;
+
+        // Initialize the application
+        function initApp() {
+            updateCurrentDate();
+            loadArticles();
+            displayWeather('freetown');
+            startLiveWeatherUpdates();
+            updateAuthUI();
+            loadPDFs();
+            setupEventListeners();
+            
+            // Initialize with default admin user if not exists
+            const users = DataStorage.getUsers();
+            const adminExists = users.some(user => user.role === 'admin');
+            if (!adminExists) {
+                users.push({
+                    id: 1,
+                    name: "Administrator",
+                    email: ADMIN_CREDENTIALS.email,
+                    password: ADMIN_CREDENTIALS.password,
+                    role: "admin",
+                    createdAt: new Date().toISOString()
+                });
+                DataStorage.saveUsers(users);
+            }
+            
+            // Initialize with some sample PDFs if empty
+            const pdfs = DataStorage.getPDFs();
+            if (pdfs.length === 0) {
+                const samplePDFs = [
+                    {
+                        id: 1,
+                        title: "Climate Change Impact Report 2023",
+                        category: "climate",
+                        fileName: "climate_report_2023.pdf",
+                        uploadDate: new Date().toISOString(),
+                        size: "12.4 MB",
+                        uploader: "Admin"
+                    },
+                    {
+                        id: 2,
+                        title: "Wildlife Conservation Quarterly",
+                        category: "conservation",
+                        fileName: "wildlife_conservation_q3.pdf",
+                        uploadDate: new Date(Date.now() - 86400000).toISOString(),
+                        size: "8.7 MB",
+                        uploader: "Admin"
+                    }
+                ];
+                DataStorage.savePDFs(samplePDFs);
+                loadPDFs();
+            }
+            
+            updateAdminStats();
+        }
+
+        // Update current date
+        function updateCurrentDate() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            currentDateElement.textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // File input change
+            pdfFileInput.addEventListener('change', function(e) {
+                if (this.files.length > 0) {
+                    fileName.textContent = this.files[0].name;
+                } else {
+                    fileName.textContent = 'No file chosen';
+                }
+            });
+
+            // PDF form submission
+            pdfUploadForm.addEventListener('submit', handlePDFUpload);
+
+            // Load more articles
+            loadMoreBtn.addEventListener('click', () => {
+                displayedArticles += 3;
+                const articles = DataStorage.getArticles();
+                if (displayedArticles >= articles.length) {
+                    loadMoreBtn.style.display = 'none';
+                }
+                displayArticles(displayedArticles);
+            });
+
+            // Weather button click
+            weatherBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                weatherSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Weather region buttons
+            weatherRegionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    weatherRegionBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentWeatherRegion = btn.dataset.region;
+                    displayWeather(currentWeatherRegion);
+                });
+            });
+
+            // Close modal
+            closeModal.addEventListener('click', () => {
+                authModal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target === authModal) {
+                    authModal.style.display = 'none';
+                }
+            });
+
+            // Tab switching
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    switchTab(button.dataset.tab);
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Form submissions
+            document.getElementById('loginForm').addEventListener('submit', handleLogin);
+            document.getElementById('registerForm').addEventListener('submit', handleRegister);
+            
+            // Admin tabs
+            adminTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.dataset.tab;
+                    switchAdminTab(tabName);
+                });
+            });
+            
+            // Admin forms
+            newsForm.addEventListener('submit', handleNewsSubmit);
+            adminPdfForm.addEventListener('submit', handleAdminPdfSubmit);
+            settingsForm.addEventListener('submit', handleSettingsSubmit);
+            
+            // Character counter for excerpt
+            document.getElementById('articleExcerpt').addEventListener('input', function() {
+                excerptCount.textContent = this.value.length;
+            });
+        }
+
+        // Load articles from storage or use defaults
+        function loadArticles() {
+            let articles = DataStorage.getArticles();
+            if (articles.length === 0) {
+                articles = defaultArticles;
+                DataStorage.saveArticles(articles);
+            }
+            displayArticles(displayedArticles);
+            updateAdminArticlesList();
+        }
+
+        // Display articles
+        function displayArticles(count) {
+            const articles = DataStorage.getArticles();
+            articlesContainer.innerHTML = '';
+            const articlesToShow = articles.slice(0, count);
+            
+            articlesToShow.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.className = 'article-card';
+                articleElement.innerHTML = `
+                    <div class="article-image">
+                        <img src="${article.image}" alt="${article.title}">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">${article.category}</span>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-meta">
+                            <span>${article.date}</span>
+                            <span>By ${article.author}</span>
+                        </div>
+                    </div>
+                `;
+                articlesContainer.appendChild(articleElement);
+            });
+
+            // Hide load more button if all articles are displayed
+            if (count >= articles.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-block';
+            }
+        }
+
+        // Display weather data
+        function displayWeather(region) {
+            weatherDisplay.innerHTML = '';
+            const data = weatherData[region];
+            
+            data.forEach(location => {
+                const weatherCard = document.createElement('div');
+                weatherCard.className = 'weather-card';
+                weatherCard.innerHTML = `
+                    <div class="weather-location">${location.location}</div>
+                    <div class="weather-icon">
+                        <i class="fas ${location.icon}"></i>
+                    </div>
+                    <div class="weather-temp">${location.temp}°C</div>
+                    <div class="weather-condition">${location.condition}</div>
+                    <div class="weather-details">
+                        <div>Humidity: ${location.humidity}%</div>
+                        <div>Wind: ${location.wind} km/h</div>
+                    </div>
+                    <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                        <i class="fas fa-sync-alt"></i> Live updates active
+                    </div>
+                `;
+                weatherDisplay.appendChild(weatherCard);
+            });
+        }
+
+        // Start live weather updates
+        function startLiveWeatherUpdates() {
+            // Clear any existing interval
+            if (weatherUpdateInterval) {
+                clearInterval(weatherUpdateInterval);
+            }
+            
+            // Update weather every 10 seconds
+            weatherUpdateInterval = setInterval(() => {
+                updateWeatherData();
+                displayWeather(currentWeatherRegion);
+            }, 10000);
+        }
+
+        // Update weather data with realistic changes
+        function updateWeatherData() {
+            Object.keys(weatherData).forEach(region => {
+                weatherData[region].forEach(location => {
+                    // Small random temperature changes (-0.5 to +0.5)
+                    location.temp += (Math.random() - 0.5);
+                    location.temp = Math.round(location.temp * 10) / 10;
+                    
+                    // Small humidity changes
+                    location.humidity += Math.floor(Math.random() * 3) - 1;
+                    location.humidity = Math.max(40, Math.min(95, location.humidity));
+                    
+                    // Small wind changes
+                    location.wind += Math.floor(Math.random() * 3) - 1;
+                    location.wind = Math.max(2, Math.min(25, location.wind));
+                    
+                    // Occasionally change weather condition
+                    if (Math.random() < 0.1) { // 10% chance to change condition
+                        const conditions = [
+                            { condition: "Sunny", icon: "fa-sun" },
+                            { condition: "Partly Cloudy", icon: "fa-cloud-sun" },
+                            { condition: "Cloudy", icon: "fa-cloud" },
+                            { condition: "Rainy", icon: "fa-cloud-rain" },
+                            { condition: "Thunderstorm", icon: "fa-bolt" }
+                        ];
+                        const newCondition = conditions[Math.floor(Math.random() * conditions.length)];
+                        location.condition = newCondition.condition;
+                        location.icon = newCondition.icon;
+                    }
+                });
+            });
+        }
+
+        // Load and display PDFs
+        function loadPDFs() {
+            const pdfs = DataStorage.getPDFs();
+            pdfListContainer.innerHTML = '';
+
+            if (pdfs.length === 0) {
+                pdfListContainer.innerHTML = `
+                    <div class="empty-state">
+                        <i class="far fa-file-pdf"></i>
+                        <h3>No PDFs Available</h3>
+                        <p>No documents have been uploaded yet.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            pdfs.forEach(pdf => {
+                const pdfItem = document.createElement('div');
+                pdfItem.className = 'pdf-item';
+                pdfItem.innerHTML = `
+                    <div class="pdf-icon">
+                        <i class="far fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <h4>${pdf.title}</h4>
+                        <div class="pdf-meta">
+                            ${pdf.category} • ${pdf.size} • ${new Date(pdf.uploadDate).toLocaleDateString()}
+                            ${pdf.uploader ? `<br>Uploaded by: ${pdf.uploader}` : ''}
+                        </div>
+                    </div>
+                    <div class="pdf-actions">
+                        <i class="fas fa-download pdf-download" title="Download" onclick="downloadPDF(${pdf.id})"></i>
+                        ${currentUser && currentUser.role === 'employee' && isEmployeeVerified ? 
+                            `<i class="fas fa-trash pdf-delete" title="Delete" onclick="deletePDF(${pdf.id})"></i>` : ''}
+                    </div>
+                `;
+                pdfListContainer.appendChild(pdfItem);
+            });
+            
+            updateAdminPdfList();
+        }
+
+        // Handle PDF upload
+        function handlePDFUpload(e) {
+            e.preventDefault();
+            
+            if (!currentUser || currentUser.role !== 'employee') {
+                showNotification('You must be logged in as an employee to upload PDFs.', 'error');
+                return;
+            }
+
+            if (!isEmployeeVerified) {
+                showNotification('Please verify your employee status first.', 'error');
+                return;
+            }
+
+            const title = document.getElementById('pdfTitle').value;
+            const category = document.getElementById('pdfCategory').value;
+            const file = pdfFileInput.files[0];
+
+            if (!file) {
+                showNotification('Please select a PDF file.', 'error');
+                return;
+            }
+
+            if (file.type !== 'application/pdf') {
+                showNotification('Please select a valid PDF file.', 'error');
+                return;
+            }
+
+            // Create a simple file size calculation
+            const size = (file.size / (1024 * 1024)).toFixed(1) + ' MB';
+
+            // Add new PDF to storage
+            const pdfs = DataStorage.getPDFs();
+            const newPDF = {
+                id: Date.now(),
+                title: title,
+                category: category,
+                fileName: file.name,
+                uploadDate: new Date().toISOString(),
+                size: size,
+                uploader: currentUser.name
+            };
+
+            pdfs.unshift(newPDF);
+            DataStorage.savePDFs(pdfs);
+
+            // Reset form and show success message
+            pdfUploadForm.reset();
+            fileName.textContent = 'No file chosen';
+            showNotification('PDF uploaded successfully!', 'success');
+            loadPDFs();
+        }
+
+        // Download PDF (simulated)
+        function downloadPDF(pdfId) {
+            const pdfs = DataStorage.getPDFs();
+            const pdf = pdfs.find(p => p.id === pdfId);
+            if (pdf) {
+                alert(`Downloading: ${pdf.title}\n\nIn a real application, this would download the actual PDF file.`);
+                // In a real app, you would trigger actual file download here
+            }
+        }
+
+        // Delete PDF
+        function deletePDF(pdfId) {
+            if (!currentUser || currentUser.role !== 'employee' || !isEmployeeVerified) {
+                alert('Only verified employees can delete PDFs.');
+                return;
+            }
+
+            if (confirm('Are you sure you want to delete this PDF?')) {
+                const pdfs = DataStorage.getPDFs();
+                const updatedPDFs = pdfs.filter(p => p.id !== pdfId);
+                DataStorage.savePDFs(updatedPDFs);
+                loadPDFs();
+                showNotification('PDF deleted successfully!', 'success');
+            }
+        }
+
+        // Enhanced login handler
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Check for admin credentials first
+            if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
+                currentUser = {
+                    id: 1,
+                    name: "Administrator",
+                    email: ADMIN_CREDENTIALS.email,
+                    role: "admin",
+                    createdAt: new Date().toISOString()
+                };
+                DataStorage.setCurrentUser(currentUser);
+                updateAuthUI();
+                authModal.style.display = 'none';
+                showNotification('Admin login successful!', 'success');
+                return;
+            }
+
+            // Check regular users
+            const users = DataStorage.getUsers();
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                currentUser = user;
+                DataStorage.setCurrentUser(user);
+                updateAuthUI();
+                authModal.style.display = 'none';
+                showNotification('Login successful!', 'success');
+            } else {
+                showNotification('Invalid email or password. Please try again.', 'error');
+            }
+        }
+
+        // Enhanced registration handler
+        function handleRegister(e) {
+            e.preventDefault();
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const role = document.querySelector('input[name="role"]:checked').value;
+
+            if (password !== confirmPassword) {
+                showNotification('Passwords do not match.', 'error');
+                return;
+            }
+
+            // Prevent registering with admin email
+            if (email === ADMIN_CREDENTIALS.email) {
+                showNotification('This email is reserved for administrator use.', 'error');
+                return;
+            }
+
+            const users = DataStorage.getUsers();
+            
+            // Check if user already exists
+            if (users.find(u => u.email === email)) {
+                showNotification('An account with this email already exists.', 'error');
+                return;
+            }
+
+            // Create new user
+            const newUser = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                password: password,
+                role: role,
+                createdAt: new Date().toISOString()
+            };
+
+            users.push(newUser);
+            DataStorage.saveUsers(users);
+
+            // Auto-login after registration
+            currentUser = newUser;
+            DataStorage.setCurrentUser(newUser);
+            updateAuthUI();
+            authModal.style.display = 'none';
+            showNotification('Registration successful! Welcome to THE NATURE NEWSPAPER.', 'success');
+        }
+
+        // Enhanced authentication UI
+        function updateAuthUI() {
+            if (currentUser) {
+                authButtons.innerHTML = `
+                    <div class="user-info">
+                        <span>Welcome, ${currentUser.name}</span>
+                        <span class="user-role">${currentUser.role}</span>
+                    </div>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                `;
+                
+                // Update admin welcome message
+                if (currentUser.role === 'admin') {
+                    document.getElementById('adminWelcome').textContent = `Welcome, ${currentUser.name}`;
+                }
+                
+                // Show appropriate panels based on user role
+                if (currentUser.role === 'employee') {
+                    employeePanel.style.display = 'block';
+                    adminPanel.style.display = 'none';
+                } else if (currentUser.role === 'admin') {
+                    employeePanel.style.display = 'none';
+                    adminPanel.style.display = 'block';
+                    updateAdminStats();
+                    updateAdminUsersList();
+                } else {
+                    employeePanel.style.display = 'none';
+                    adminPanel.style.display = 'none';
+                }
+            } else {
+                authButtons.innerHTML = `
+                    <a href="#" class="login" id="loginBtn">Login</a>
+                    <a href="#" class="register" id="registerBtn">Register</a>
+                `;
+                employeePanel.style.display = 'none';
+                adminPanel.style.display = 'none';
+                
+                // Re-attach event listeners to new buttons
+                document.getElementById('loginBtn').addEventListener('click', showLoginModal);
+                document.getElementById('registerBtn').addEventListener('click', showRegisterModal);
+            }
+        }
+
+        // Show login modal
+        function showLoginModal(e) {
+            e.preventDefault();
+            authModal.style.display = 'flex';
+            document.getElementById('modalTitle').textContent = 'Login to Your Account';
+            switchTab('login');
+        }
+
+        // Show register modal
+        function showRegisterModal(e) {
+            e.preventDefault();
+            authModal.style.display = 'flex';
+            document.getElementById('modalTitle').textContent = 'Create New Account';
+            switchTab('register');
+        }
+
+        // Logout function
+        function logout() {
+            currentUser = null;
+            isEmployeeVerified = false;
+            DataStorage.setCurrentUser(null);
+            updateAuthUI();
+            showNotification('You have been logged out.', 'success');
+        }
+
+        // Role selection
+        function selectRole(role) {
+            document.querySelectorAll('.role-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            document.querySelector(`input[value="${role}"]`).checked = true;
+        }
+
+        // Tab switching
+        function switchTab(tabName) {
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                if (button.dataset.tab === tabName) {
+                    button.classList.add('active');
+                }
+            });
+            
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            document.getElementById(tabName + 'Tab').classList.add('active');
+        }
+
+        // Admin tab switching
+        function switchAdminTab(tabName) {
+            adminTabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.dataset.tab === tabName) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            adminContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === tabName + 'Tab') {
+                    content.classList.add('active');
+                }
+            });
+        }
+
+        // Handle news submission
+        function handleNewsSubmit(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('articleTitle').value;
+            const category = document.getElementById('articleCategory').value;
+            const image = document.getElementById('articleImage').value;
+            const excerpt = document.getElementById('articleExcerpt').value;
+            const author = document.getElementById('articleAuthor').value;
+            
+            const newArticle = {
+                id: Date.now(),
+                title: title,
+                category: category,
+                image: image,
+                excerpt: excerpt,
+                date: new Date().toLocaleDateString(),
+                author: author
+            };
+            
+            const articles = DataStorage.getArticles();
+            articles.unshift(newArticle);
+            DataStorage.saveArticles(articles);
+            
+            // Reset form
+            newsForm.reset();
+            excerptCount.textContent = '0';
+            
+            // Update display
+            displayArticles(displayedArticles);
+            updateAdminArticlesList();
+            updateAdminStats();
+            
+            showNotification('Article added successfully!', 'success');
+        }
+
+        // Handle admin PDF submission
+        function handleAdminPdfSubmit(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('adminPdfTitle').value;
+            const category = document.getElementById('adminPdfCategory').value;
+            const url = document.getElementById('adminPdfUrl').value;
+            const size = document.getElementById('adminPdfSize').value;
+            
+            const newPDF = {
+                id: Date.now(),
+                title: title,
+                category: category,
+                fileName: url.split('/').pop() || 'document.pdf',
+                uploadDate: new Date().toISOString(),
+                size: size,
+                uploader: currentUser.name
+            };
+            
+            const pdfs = DataStorage.getPDFs();
+            pdfs.unshift(newPDF);
+            DataStorage.savePDFs(pdfs);
+            
+            // Reset form
+            adminPdfForm.reset();
+            
+            // Update display
+            loadPDFs();
+            updateAdminStats();
+            
+            showNotification('PDF added successfully!', 'success');
+        }
+
+        // Handle settings submission
+        function handleSettingsSubmit(e) {
+            e.preventDefault();
+            showNotification('Settings saved successfully!', 'success');
+        }
+
+        // Admin statistics
+        function updateAdminStats() {
+            const articles = DataStorage.getArticles();
+            const pdfs = DataStorage.getPDFs();
+            const users = DataStorage.getUsers();
+            
+            document.getElementById('articlesCount').textContent = articles.length;
+            document.getElementById('pdfsCount').textContent = pdfs.length;
+            document.getElementById('usersCount').textContent = users.filter(u => u.role !== 'admin').length;
+        }
+
+        // Update admin articles list
+        function updateAdminArticlesList() {
+            const articles = DataStorage.getArticles();
+            adminArticlesList.innerHTML = '';
+            
+            if (articles.length === 0) {
+                adminArticlesList.innerHTML = '<div class="content-item"><div>No articles available.</div></div>';
+                return;
+            }
+            
+            articles.forEach(article => {
+                const articleItem = document.createElement('div');
+                articleItem.className = 'content-item';
+                articleItem.innerHTML = `
+                    <div class="content-info">
+                        <h4>${article.title}</h4>
+                        <div class="content-meta">
+                            ${article.category} • ${article.date} • By ${article.author}
+                        </div>
+                    </div>
+                    <div class="content-actions">
+                        <button class="btn btn-small" onclick="editArticle(${article.id})">Edit</button>
+                        <button class="btn btn-small btn-secondary" onclick="deleteArticle(${article.id})">Delete</button>
+                    </div>
+                `;
+                adminArticlesList.appendChild(articleItem);
+            });
+        }
+
+        // Update admin PDF list
+        function updateAdminPdfList() {
+            const pdfs = DataStorage.getPDFs();
+            adminPdfList.innerHTML = '';
+            
+            if (pdfs.length === 0) {
+                adminPdfList.innerHTML = '<div class="content-item"><div>No PDFs available.</div></div>';
+                return;
+            }
+            
+            pdfs.forEach(pdf => {
+                const pdfItem = document.createElement('div');
+                pdfItem.className = 'content-item';
+                pdfItem.innerHTML = `
+                    <div class="content-info">
+                        <h4>${pdf.title}</h4>
+                        <div class="content-meta">
+                            ${pdf.category} • ${pdf.size} • ${new Date(pdf.uploadDate).toLocaleDateString()}
+                        </div>
+                    </div>
+                    <div class="content-actions">
+                        <button class="btn btn-small" onclick="editPDF(${pdf.id})">Edit</button>
+                        <button class="btn btn-small btn-secondary" onclick="deleteAdminPDF(${pdf.id})">Delete</button>
+                    </div>
+                `;
+                adminPdfList.appendChild(pdfItem);
+            });
+        }
+
+        // Update admin users list
+        function updateAdminUsersList() {
+            const users = DataStorage.getUsers();
+            adminUsersList.innerHTML = '';
+            
+            const regularUsers = users.filter(user => user.role !== 'admin');
+            
+            if (regularUsers.length === 0) {
+                adminUsersList.innerHTML = '<div class="content-item"><div>No users found</div></div>';
+                return;
+            }
+            
+            regularUsers.forEach(user => {
+                const userItem = document.createElement('div');
+                userItem.className = 'content-item';
+                userItem.innerHTML = `
+                    <div class="content-info">
+                        <h4>${user.name}</h4>
+                        <div class="content-meta">
+                            ${user.email} • ${user.role} • Joined: ${new Date(user.createdAt).toLocaleDateString()}
+                        </div>
+                    </div>
+                    <div class="content-actions">
+                        <button class="btn btn-small" onclick="editUser(${user.id})">Edit</button>
+                        <button class="btn btn-small btn-secondary" onclick="deleteUser(${user.id})">Delete</button>
+                    </div>
+                `;
+                adminUsersList.appendChild(userItem);
+            });
+        }
+
+        // Delete article (admin function)
+        function deleteArticle(articleId) {
+            if (confirm('Are you sure you want to delete this article?')) {
+                const articles = DataStorage.getArticles();
+                const updatedArticles = articles.filter(a => a.id !== articleId);
+                DataStorage.saveArticles(updatedArticles);
+                displayArticles(displayedArticles);
+                updateAdminArticlesList();
+                updateAdminStats();
+                showNotification('Article deleted successfully!', 'success');
+            }
+        }
+
+        // Delete PDF (admin function)
+        function deleteAdminPDF(pdfId) {
+            if (confirm('Are you sure you want to delete this PDF?')) {
+                const pdfs = DataStorage.getPDFs();
+                const updatedPDFs = pdfs.filter(p => p.id !== pdfId);
+                DataStorage.savePDFs(updatedPDFs);
+                loadPDFs();
+                updateAdminStats();
+                showNotification('PDF deleted successfully!', 'success');
+            }
+        }
+
+        // Delete user (admin function)
+        function deleteUser(userId) {
+            if (confirm('Are you sure you want to delete this user?')) {
+                const users = DataStorage.getUsers();
+                const updatedUsers = users.filter(u => u.id !== userId);
+                DataStorage.saveUsers(updatedUsers);
+                updateAdminUsersList();
+                updateAdminStats();
+                showNotification('User deleted successfully!', 'success');
+            }
+        }
+
+        // Edit functions (placeholder)
+        function editArticle(articleId) {
+            showNotification('Edit functionality would open here in a full implementation', 'info');
+        }
+
+        function editPDF(pdfId) {
+            showNotification('Edit functionality would open here in a full implementation', 'info');
+        }
+
+        function editUser(userId) {
+            showNotification('Edit functionality would open here in a full implementation', 'info');
+        }
+
+        // Enhanced notification system
+        function showNotification(message, type) {
+            // Remove existing notifications
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => notification.remove());
+            
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 20px;
+                border-radius: 8px;
+                color: white;
+                font-weight: 600;
+                z-index: 10000;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                animation: slideIn 0.3s ease;
+                max-width: 300px;
+            `;
+            
+            if (type === 'success') {
+                notification.style.background = 'var(--success)';
+            } else if (type === 'error') {
+                notification.style.background = '#f44336';
+            } else {
+                notification.style.background = 'var(--primary)';
+            }
+            
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-triangle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                    }, 300);
+                }
+            }, 5000);
+        }
+
+        // Initialize the application
+        initApp();
+
+        // Simulate real-time updates for news
+        setInterval(() => {
+            const updates = document.getElementById('liveUpdates');
+            const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            const newsItems = [
+                `${time} - New marine protected area established`,
+                `${time} - Climate conference begins opening ceremonies`,
+                `${time} - Solar farm project approved in Western Region`,
+                `${time} - Wildlife population shows recovery signs`,
+                `${time} - Recycling initiative reaches milestone`,
+                `${time} - Carbon emissions drop in major cities`,
+                `${time} - New species discovered in rainforest`,
+                `${time} - Renewable energy investments reach record high`
+            ];
+            const randomNews = newsItems[Math.floor(Math.random() * newsItems.length)];
+            
+            const newUpdate = document.createElement('div');
+            newUpdate.className = 'update-item';
+            newUpdate.innerHTML = `<strong>${time}</strong> - ${randomNews}`;
+            
+            updates.insertBefore(newUpdate, updates.firstChild);
+            
+            if (updates.children.length > 5) {
+                updates.removeChild(updates.lastChild);
+            }
+        }, 15000);
+
+        // Quick login function for testing (remove in production)
+        function quickAdminLogin() {
+            document.getElementById('loginEmail').value = ADMIN_CREDENTIALS.email;
+            document.getElementById('loginPassword').value = ADMIN_CREDENTIALS.password;
+            document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+        }
+
+        // Add quick login button for testing (remove in production)
+        const quickLoginBtn = document.createElement('button');
+        quickLoginBtn.textContent = 'Quick Admin Login';
+        quickLoginBtn.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 0.8rem;
+        `;
+        quickLoginBtn.onclick = quickAdminLogin;
+        document.body.appendChild(quickLoginBtn);
+    </script>
+</body>
+</html>
