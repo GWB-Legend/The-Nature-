@@ -1,0 +1,3112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipz Multimedia | African Business Awards News & Media</title>
+    <meta name="description" content="Your trusted source for African Business Awards news, featuring exclusive coverage of entrepreneurship, innovation, and business excellence across Africa">
+    <meta name="author" content="Hipz Multimedia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #DC143C;
+            --primary-dark: #B01030;
+            --background: #f8f8f8;
+            --foreground: #333;
+            --muted: #666;
+            --border: #e5e5e5;
+            --white: #ffffff;
+            --dark: #1a1a1a;
+            --blue: #3b82f6;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --whatsapp: #25D366;
+            --chatbot: #2196F3;
+            --skyblue: #87CEEB;
+            --google-blue: #4285f4;
+            --facebook-blue: #1877f2;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 12px 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-date {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Logo Section */
+        .logo-section {
+            background-color: var(--white);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+        }
+
+        .logo-placeholder {
+            width: 300px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .navigation {
+            background-color: var(--primary);
+            padding: 0;
+            position: relative;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            padding: 16px 0;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: opacity 0.3s;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .nav-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            z-index: 1000;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Exclusive Banner */
+        .exclusive-banner {
+            background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+            color: var(--white);
+            padding: 12px 0;
+            overflow: hidden;
+        }
+
+        .exclusive-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .exclusive-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: bold;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .exclusive-text {
+            font-size: 14px;
+            animation: scroll-text 20s linear infinite;
+        }
+
+        @keyframes scroll-text {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Main Content Area */
+        .main-content {
+            background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 48px 0;
+            position: relative;
+        }
+
+        .main-content::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(4px);
+        }
+
+        .content-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tab {
+            padding: 8px 16px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--muted);
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab:hover {
+            color: var(--foreground);
+        }
+
+        /* News Card */
+        .news-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .news-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+
+        .news-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .news-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.3s;
+        }
+
+        .news-item:hover h4 {
+            color: var(--primary);
+        }
+
+        /* Featured News Slider */
+        .featured-slider {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 400px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+
+        .featured-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--blue);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .featured-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            color: var(--white);
+        }
+
+        .featured-content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .featured-date {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Trending Card */
+        .trending-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .trending-image-wrapper {
+            position: relative;
+        }
+
+        .trending-item img {
+            width: 96px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+
+        .trending-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .trending-rank {
+            position: absolute;
+            bottom: -8px;
+            left: -8px;
+            background: var(--primary);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .trending-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.3s;
+        }
+
+        .trending-item:hover h4 {
+            color: var(--primary);
+        }
+
+        .trending-date {
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Featured Grid */
+        .featured-section {
+            background: var(--white);
+            padding: 48px 0;
+        }
+
+        .featured-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .featured-section h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .featured-item {
+            cursor: pointer;
+        }
+
+        .featured-item-image {
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 192px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .featured-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .featured-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .featured-item:hover h3 {
+            color: var(--primary);
+        }
+
+        /* Navigation Controls */
+        .nav-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-control-btn {
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .nav-control-btn:hover {
+            background: var(--background);
+        }
+
+        /* Icons */
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .icon-sm {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* KHARDS Section */
+        .khards-section {
+            background: var(--white);
+            padding: 50px 0;
+            margin: 50px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .khards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .khard-card {
+            text-align: center;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .khard-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .khard-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .khard-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .khard-subtitle {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .khard-description {
+            font-size: 1rem;
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            background: var(--white);
+            padding: 50px 0;
+            margin: 50px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .blog-subtitle {
+            font-size: 1.2rem;
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .blog-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: var(--foreground);
+        }
+
+        .social-media-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .social-media-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-media-links a:hover {
+            transform: translateY(-5px);
+            background: var(--primary-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--foreground);
+        }
+
+        .service-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+            animation: breathing 3s ease-in-out infinite;
+        }
+
+        .whatsapp-btn {
+            background: var(--whatsapp);
+        }
+
+        .ai-btn {
+            background: var(--chatbot);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes breathing {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Login Modal */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-modal.active {
+            display: flex;
+        }
+
+        .login-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .login-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 50px 0;
+            border: 1px solid #e0e0e0;
+            display: none;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .admin-tab {
+            padding: 12px 25px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .admin-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .admin-tab:hover:not(.active) {
+            background: #e0e0e0;
+        }
+
+        .admin-content {
+            display: none;
+        }
+
+        .admin-content.active {
+            display: block;
+        }
+
+        .admin-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .admin-table th, .admin-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .admin-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .admin-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .action-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .edit-btn {
+            background: var(--blue);
+            color: white;
+        }
+
+        .edit-btn:hover {
+            background: #2563eb;
+        }
+
+        .delete-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .delete-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--blue);
+        }
+        
+        .btn-secondary:hover {
+            background: #2563eb;
+        }
+
+        .btn-success {
+            background: var(--success);
+        }
+
+        .btn-success:hover {
+            background: #388e3c;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+
+        .btn-chatbot {
+            background: var(--chatbot);
+            color: white;
+        }
+
+        .btn-chatbot:hover {
+            background: #1976D2;
+        }
+
+        .btn-tv {
+            background: var(--skyblue);
+            color: white;
+        }
+
+        .btn-tv:hover {
+            background: #6bb8e0;
+        }
+        
+        .btn-google {
+            background: var(--google-blue);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-google:hover {
+            background: #3367d6;
+        }
+
+        .btn-facebook {
+            background: var(--facebook-blue);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-facebook:hover {
+            background: #0d5fd8;
+        }
+
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-bar {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            width: 300px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            padding: 60px 0;
+            margin: 50px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--muted);
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .article-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        
+        .article-card:hover .article-image img {
+            transform: scale(1.1);
+        }
+        
+        .article-content {
+            padding: 25px;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--blue) 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-weight: 700;
+            color: var(--foreground);
+        }
+        
+        .article-excerpt {
+            color: var(--muted);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Sidebar Widgets */
+        .sidebar-widget {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .sidebar-widget h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar-widget h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--blue);
+        }
+        
+        .trending-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        
+        .trending-list li:hover {
+            background: var(--background);
+            padding-left: 10px;
+        }
+        
+        .trending-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-list a {
+            display: flex;
+            align-items: center;
+        }
+        
+        .trending-number {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Funding Section */
+        .funding-section {
+            background: var(--primary);
+            color: white;
+            padding: 50px 0;
+            margin: 50px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .funding-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .funding-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .funding-region-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+        
+        .funding-region-btn.active {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .funding-region-btn:hover:not(.active) {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .funding-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .funding-card {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .funding-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .funding-location {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .funding-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 15px 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .funding-purpose {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        
+        .funding-details {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .funding-icon {
+            font-size: 3rem;
+            margin: 15px 0;
+        }
+
+        /* TV Section */
+        .tv-section {
+            background: var(--primary);
+            color: white;
+            padding: 70px 0;
+            margin: 60px 0;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(220, 20, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tv-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .tv-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tv-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            animation: breathing 3s ease-in-out infinite;
+        }
+
+        .tv-player {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: breathing 4s ease-in-out infinite;
+        }
+
+        .tv-placeholder {
+            background: #000;
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tv-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary) 0%, transparent 50%, var(--primary) 100%);
+            opacity: 0.1;
+            animation: tvGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes tvGlow {
+            from { opacity: 0.1; }
+            to { opacity: 0.3; }
+        }
+
+        .tv-placeholder i {
+            font-size: 4rem;
+            color: var(--blue);
+            z-index: 2;
+        }
+
+        .tv-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tv-channel {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .tv-channel:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+
+        .tv-channel.active {
+            background: white;
+            color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        /* PDF Portal */
+        .pdf-portal {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 50px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .pdf-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .pdf-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .pdf-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background: white;
+        }
+        
+        .pdf-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-right: 20px;
+        }
+        
+        .pdf-info h4 {
+            margin-bottom: 8px;
+            color: var(--foreground);
+            font-weight: 600;
+        }
+        
+        .pdf-meta {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .pdf-actions {
+            margin-left: auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .pdf-download {
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .pdf-download:hover {
+            color: var(--primary-dark);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 50px;
+            color: var(--muted);
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        /* WhatsApp Section */
+        .whatsapp-section {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 70px 0;
+            margin: 60px 0;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .whatsapp-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .whatsapp-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+        }
+
+        .whatsapp-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .whatsapp-feature {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .whatsapp-feature i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-feature h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #aaa;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            color: #aaa;
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--muted);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .logo-placeholder {
+                width: 250px;
+                height: 80px;
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-placeholder {
+                width: 200px;
+                height: 70px;
+                font-size: 1.1rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-bar {
+                width: 200px;
+            }
+            
+            .slider {
+                height: 400px;
+            }
+            
+            .slide-title {
+                font-size: 1.8rem;
+            }
+            
+            .slide-description {
+                font-size: 1rem;
+            }
+            
+            .tv-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .funding-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .funding-region-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-date">
+                <i class="fas fa-calendar-alt"></i>
+                <span id="current-date">Monday, January 1, 2023</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Logo Section -->
+    <section class="logo-section">
+        <div class="logo-container">
+            <!-- Replace this div with your actual logo image -->
+            <!-- <https://vui.unsplash.com/resize?height=256&quality=60&type=auto&url=https%3A%2F%2Fsearched-images.s3.us-west-2.amazonaws.com%2F2ac742b1-0d8d-4ec5-8721-9c82fec94ae5%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DAKIAQ4GRIA4QQ7L7GEOH%252F20251020%252Fus-west-2%252Fs3%252Faws4_request%26X-Amz-Date%3D20251020T130159Z%26X-Amz-Expires%3D86400%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3Da4dc662480088b534eaa768281396145c1c45866d9a7ee10200a4243b93e6d70&sign=kuU00YMoD_qDTMkdQk90VcQbl5ySbKC_bKyG8t2AcPc" alt="HIPZ MULTIMEDIA" class="logo-img"> -->
+            <div class="logo-placeholder">
+                HIPZ MULTIMEDIA LOGO
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="#"><i class="fas fa-trophy"></i> Awards</a></li>
+                <li><a href="#"><i class="fas fa-video"></i> TV</a></li>
+                <li><a href="#"><i class="fas fa-microphone"></i> Podcasts</a></li>
+                <li><a href="#"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="search-toggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-btn" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-btn" id="admin-login-btn">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="#"><i class="fas fa-trophy"></i> Awards</a></li>
+                <li><a href="#"><i class="fas fa-video"></i> TV</a></li>
+                <li><a href="#"><i class="fas fa-microphone"></i> Podcasts</a></li>
+                <li><a href="#"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-container hidden" id="search-container">
+        <div class="header-container">
+            <input type="text" class="search-bar" placeholder="Search for news, awards, and more...">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Exclusive Banner -->
+    <section class="exclusive-banner">
+        <div class="exclusive-content">
+            <div class="exclusive-badge">
+                <i class="fas fa-star"></i>
+                EXCLUSIVE
+            </div>
+            <div class="exclusive-text">
+                Breaking: African Business Awards 2023 Winners Announced - See the Full List of Honorees and Their Groundbreaking Achievements
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-grid">
+            <!-- Left Sidebar -->
+            <div class="left-sidebar">
+                <div class="card">
+                    <h2>Categories</h2>
+                    <div class="tabs">
+                        <button class="tab active" data-tab="business">Business</button>
+                        <button class="tab" data-tab="innovation">Innovation</button>
+                        <button class="tab" data-tab="sustainability">Sustainability</button>
+                    </div>
+                    <div class="tab-content active" id="business">
+                        <div class="news-item">
+                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=150&h=150&fit=crop" alt="News">
+                            <h4>Top 10 African Startups to Watch in 2023</h4>
+                        </div>
+                        <div class="news-item">
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=150&h=150&fit=crop" alt="News">
+                            <h4>How African Entrepreneurs Are Driving Economic Growth</h4>
+                        </div>
+                        <div class="news-item">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=150&fit=crop" alt="News">
+                            <h4>Investment Opportunities in Africa's Emerging Markets</h4>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="innovation">
+                        <div class="news-item">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=150&h=150&fit=crop" alt="News">
+                            <h4>African Tech Innovations Solving Local Challenges</h4>
+                        </div>
+                        <div class="news-item">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&h=150&fit=crop" alt="News">
+                            <h4>How Mobile Technology Is Transforming African Commerce</h4>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="sustainability">
+                        <div class="news-item">
+                            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=150&h=150&fit=crop" alt="News">
+                            <h4>Sustainable Business Practices in African Companies</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Trending</h2>
+                    <div class="trending-list" id="trending-list">
+                        <div class="trending-item">
+                            <div class="trending-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=150&h=150&fit=crop" alt="Trending">
+                                <div class="trending-rank">1</div>
+                            </div>
+                            <div class="trending-content">
+                                <h4>African Business Awards 2023: Complete Winners List</h4>
+                                <div class="trending-date">
+                                    <i class="fas fa-clock"></i>
+                                    2 hours ago
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trending-item">
+                            <div class="trending-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=150&h=150&fit=crop" alt="Trending">
+                                <div class="trending-rank">2</div>
+                            </div>
+                            <div class="trending-content">
+                                <h4>Meet the Youngest African Entrepreneur to Win an Award</h4>
+                                <div class="trending-date">
+                                    <i class="fas fa-clock"></i>
+                                    5 hours ago
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trending-item">
+                            <div class="trending-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1551836026-d5c88ac6d1e1?w=150&h=150&fit=crop" alt="Trending">
+                                <div class="trending-rank">3</div>
+                            </div>
+                            <div class="trending-content">
+                                <h4>How African Businesses Are Adapting to Global Changes</h4>
+                                <div class="trending-date">
+                                    <i class="fas fa-clock"></i>
+                                    1 day ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-area">
+                <!-- Featured News Slider -->
+                <div class="featured-slider" id="featured-slider">
+                    <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop');">
+                        <div class="featured-overlay"></div>
+                        <div class="featured-badge">FEATURED</div>
+                        <div class="featured-content">
+                            <h3>African Business Awards 2023: Celebrating Excellence and Innovation Across the Continent</h3>
+                            <div class="featured-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                October 15, 2023
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551836026-d5c88ac6d1e1?w=800&h=400&fit=crop');">
+                        <div class="featured-overlay"></div>
+                        <div class="featured-badge">BREAKING</div>
+                        <div class="featured-content">
+                            <h3>Record Investments in African Tech Startups Reach $5 Billion in 2023</h3>
+                            <div class="featured-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                October 14, 2023
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop');">
+                        <div class="featured-overlay"></div>
+                        <div class="featured-badge">EXCLUSIVE</div>
+                        <div class="featured-content">
+                            <h3>Women Entrepreneurs Dominate African Business Awards 2023</h3>
+                            <div class="featured-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                October 13, 2023
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <div class="slider-dot active" data-slide="0"></div>
+                        <div class="slider-dot" data-slide="1"></div>
+                        <div class="slider-dot" data-slide="2"></div>
+                    </div>
+                </div>
+
+                <!-- KHARDS Section -->
+                <section class="khards-section">
+                    <div class="featured-container">
+                        <h2 class="section-title">KHARDS AWARDS</h2>
+                        <p class="section-subtitle">Celebrating Business Excellence Across Africa</p>
+                        
+                        <div class="khards-grid">
+                            <div class="khard-card">
+                                <div class="khard-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="khard-title">KHARDS</div>
+                                <div class="khard-subtitle">AWARDS</div>
+                                <div class="khard-description">
+                                    Recognizing outstanding achievements in African business and entrepreneurship through our prestigious awards program.
+                                </div>
+                            </div>
+                            <div class="khard-card">
+                                <div class="khard-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="khard-title">POWDER'S</div>
+                                <div class="khard-subtitle">BUSINESSES</div>
+                                <div class="khard-description">
+                                    Showcasing successful business ventures and innovative enterprises driving economic growth across the continent.
+                                </div>
+                            </div>
+                            <div class="khard-card">
+                                <div class="khard-icon">
+                                    <i class="fas fa-anchor"></i>
+                                </div>
+                                <div class="khard-title">SERIAL EONE</div>
+                                <div class="khard-subtitle">PORTS AUTHORITY</div>
+                                <div class="khard-description">
+                                    Highlighting infrastructure development and port authorities facilitating trade and commerce in Africa.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Blog Section -->
+                <section class="blog-section">
+                    <div class="blog-content">
+                        <h2 class="blog-title">Blog Posts</h2>
+                        <p class="blog-subtitle">Welcome to Pan African Multimedia Agency the owners of all other platforms herein.</p>
+                        <p class="blog-description">
+                            Follow us on all social media platforms to stay updated with the latest news, awards, and business insights from across Africa.
+                        </p>
+                        
+                        <div class="social-media-links">
+                            <a href="https://www.facebook.com/TheNatureNewspaper/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                        
+                        <a href="http://www.hipzmultimedia.com" class="btn" target="_blank">Visit Our Website</a>
+                    </div>
+                    
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-broadcast-tower"></i>
+                            </div>
+                            <h3 class="service-title">Broadcasting</h3>
+                            <p class="service-description">
+                                We do broadcasting both Radio and Television, covering events and news across different African countries.
+                            </p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <h3 class="service-title">Publications</h3>
+                            <p class="service-description">
+                                News Paper and Magazine publications covering different African countries with quality content.
+                            </p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <h3 class="service-title">Audiovisual Content</h3>
+                            <p class="service-description">
+                                Welcome to Hipz Multimedia a platform to produce Audiovisual contents for broadcasting and publication.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section class="stats-section">
+                    <div class="featured-container">
+                        <h2 class="section-title">African Business Awards Impact</h2>
+                        <p class="section-subtitle">Celebrating excellence and driving economic growth across the continent</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="stat-number">150+</div>
+                                <div class="stat-label">Awards Given</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Nominees</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-globe-africa"></i>
+                                </div>
+                                <div class="stat-number">40+</div>
+                                <div class="stat-label">African Countries</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-number">$2.5B+</div>
+                                <div class="stat-label">Investment Generated</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Articles Grid -->
+                <section class="featured-section">
+                    <div class="featured-container">
+                        <h2 class="section-title">Latest News & Updates</h2>
+                        <p class="section-subtitle">Stay informed with the latest developments in African business and awards</p>
+                        
+                        <div class="articles-grid">
+                            <div class="article-card">
+                                <div class="article-image">
+                                    <img src="https://images.unsplash.com/photo-1551836026-d5c88ac6d1e1?w=400&h=250&fit=crop" alt="Article">
+                                </div>
+                                <div class="article-content">
+                                    <span class="article-category">Business</span>
+                                    <h3 class="article-title">How African Entrepreneurs Are Driving Economic Growth in 2023</h3>
+                                    <p class="article-excerpt">Discover the innovative strategies and business models that are transforming Africa's economic landscape and creating new opportunities.</p>
+                                    <div class="article-meta">
+                                        <span><i class="far fa-clock"></i> 3 hours ago</span>
+                                        <span><i class="far fa-eye"></i> 1.2K views</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="article-card">
+                                <div class="article-image">
+                                    <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=400&h=250&fit=crop" alt="Article">
+                                </div>
+                                <div class="article-content">
+                                    <span class="article-category">Awards</span>
+                                    <h3 class="article-title">Meet the Winners of the 2023 African Business Excellence Awards</h3>
+                                    <p class="article-excerpt">From tech innovators to sustainable agriculture pioneers, these are the businesses and leaders recognized for their outstanding contributions.</p>
+                                    <div class="article-meta">
+                                        <span><i class="far fa-clock"></i> 1 day ago</span>
+                                        <span><i class="far fa-eye"></i> 3.5K views</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="article-card">
+                                <div class="article-image">
+                                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop" alt="Article">
+                                </div>
+                                <div class="article-content">
+                                    <span class="article-category">Innovation</span>
+                                    <h3 class="article-title">African Tech Startups Secure Record Funding in Q3 2023</h3>
+                                    <p class="article-excerpt">Investment in African technology companies continues to grow, with fintech, healthtech, and cleantech leading the way.</p>
+                                    <div class="article-meta">
+                                        <span><i class="far fa-clock"></i> 2 days ago</span>
+                                        <span><i class="far fa-eye"></i> 2.1K views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Funding Section -->
+                <section class="funding-section">
+                    <div class="featured-container">
+                        <h2 class="section-title" style="color: white;">Regional Funding & Investment</h2>
+                        <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Tracking investment flows and business funding opportunities across Africa</p>
+                        
+                        <div class="funding-controls">
+                            <button class="funding-region-btn active" data-region="all">All Regions</button>
+                            <button class="funding-region-btn" data-region="west">West Africa</button>
+                            <button class="funding-region-btn" data-region="east">East Africa</button>
+                            <button class="funding-region-btn" data-region="south">Southern Africa</button>
+                            <button class="funding-region-btn" data-region="north">North Africa</button>
+                        </div>
+                        
+                        <div class="funding-display">
+                            <div class="funding-card" data-region="west">
+                                <div class="funding-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="funding-location">Nigeria & Ghana</div>
+                                <div class="funding-amount">$450M</div>
+                                <div class="funding-purpose">Fintech & E-commerce</div>
+                                <div class="funding-details">
+                                    <div>
+                                        <div>+15%</div>
+                                        <div>Growth</div>
+                                    </div>
+                                    <div>
+                                        <div>42</div>
+                                        <div>Deals</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="funding-card" data-region="east">
+                                <div class="funding-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="funding-location">Kenya & Ethiopia</div>
+                                <div class="funding-amount">$280M</div>
+                                <div class="funding-purpose">Mobile Tech & AgriTech</div>
+                                <div class="funding-details">
+                                    <div>
+                                        <div>+22%</div>
+                                        <div>Growth</div>
+                                    </div>
+                                    <div>
+                                        <div>31</div>
+                                        <div>Deals</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="funding-card" data-region="south">
+                                <div class="funding-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="funding-location">South Africa</div>
+                                <div class="funding-amount">$380M</div>
+                                <div class="funding-purpose">Clean Energy & Fintech</div>
+                                <div class="funding-details">
+                                    <div>
+                                        <div>+18%</div>
+                                        <div>Growth</div>
+                                    </div>
+                                    <div>
+                                        <div>28</div>
+                                        <div>Deals</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TV Section -->
+                <section class="tv-section">
+                    <div class="tv-content">
+                        <div class="tv-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <h2 class="section-title" style="color: white;">Hipz Multimedia TV</h2>
+                        <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Watch exclusive interviews, award ceremonies, and business insights</p>
+                        
+                        <div class="tv-player">
+                            <div class="tv-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="tv-controls">
+                                <div class="tv-channel active">Awards Ceremony</div>
+                                <div class="tv-channel">Executive Interviews</div>
+                                <div class="tv-channel">Business Insights</div>
+                                <div class="tv-channel">Success Stories</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-tv">
+                            <i class="fas fa-play"></i> Watch Live Stream
+                        </button>
+                    </div>
+                </section>
+
+                <!-- PDF Portal -->
+                <section class="pdf-portal">
+                    <h2 class="section-title">Resources & Publications</h2>
+                    <p class="section-subtitle">Access reports, award nominations, and business insights</p>
+                    
+                    <div class="pdf-list">
+                        <div class="pdf-item">
+                            <div class="pdf-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="pdf-info">
+                                <h4>African Business Awards 2023 Report</h4>
+                                <div class="pdf-meta">Published: Oct 10, 2023 | Size: 2.4 MB</div>
+                            </div>
+                            <div class="pdf-actions">
+                                <i class="fas fa-download pdf-download"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="pdf-item">
+                            <div class="pdf-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="pdf-info">
+                                <h4>Nomination Guidelines 2024</h4>
+                                <div class="pdf-meta">Published: Sep 28, 2023 | Size: 1.8 MB</div>
+                            </div>
+                            <div class="pdf-actions">
+                                <i class="fas fa-download pdf-download"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="pdf-item">
+                            <div class="pdf-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="pdf-info">
+                                <h4>African Economic Outlook 2023</h4>
+                                <div class="pdf-meta">Published: Aug 15, 2023 | Size: 3.2 MB</div>
+                            </div>
+                            <div class="pdf-actions">
+                                <i class="fas fa-download pdf-download"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WhatsApp Section -->
+                <section class="whatsapp-section">
+                    <div class="whatsapp-content">
+                        <div class="whatsapp-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h2 class="section-title" style="color: white;">Stay Connected via WhatsApp</h2>
+                        <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Get instant updates, news alerts, and exclusive content directly on WhatsApp</p>
+                        
+                        <div class="whatsapp-features">
+                            <div class="whatsapp-feature">
+                                <i class="fas fa-bell"></i>
+                                <h4>Breaking News Alerts</h4>
+                                <p>Be the first to know about award winners and important announcements</p>
+                            </div>
+                            
+                            <div class="whatsapp-feature">
+                                <i class="fas fa-trophy"></i>
+                                <h4>Award Updates</h4>
+                                <p>Receive notifications about nomination deadlines and ceremony details</p>
+                            </div>
+                            
+                            <div class="whatsapp-feature">
+                                <i class="fas fa-calendar-alt"></i>
+                                <h4>Event Reminders</h4>
+                                <p>Get reminders for upcoming award ceremonies and business events</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Join WhatsApp Channel
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="right-sidebar">
+                <div class="card">
+                    <h2>Upcoming Events</h2>
+                    <div class="news-item">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=150&h=150&fit=crop" alt="Event">
+                        <h4>African Business Awards Gala - November 2023</h4>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=150&h=150&fit=crop" alt="Event">
+                        <h4>Entrepreneurship Summit - Lagos</h4>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://images.unsplash.com/photo-1551836026-d5c88ac6d1e1?w=150&h=150&fit=crop" alt="Event">
+                        <h4>Innovation & Tech Conference - Nairobi</h4>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Connect With Us</h2>
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+                        <button class="btn btn-facebook">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                        <button class="btn" style="background: #1DA1F2;">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </button>
+                        <button class="btn" style="background: #E1306C;">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </button>
+                        <button class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="btn btn-chatbot">
+                            <i class="fas fa-robot"></i> Chatbot
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Newsletter</h2>
+                    <p style="margin-bottom: 16px; font-size: 14px;">Subscribe to our newsletter for the latest updates on African business awards.</p>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your email address">
+                    </div>
+                    <button class="btn" style="width: 100%; margin-top: 12px;">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <div class="floating-btn whatsapp-btn" id="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="floating-btn ai-btn" id="ai-btn">
+            <i class="fas fa-robot"></i>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="login-modal">
+        <div class="login-form">
+            <h2>Admin Login</h2>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" class="form-control" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" placeholder="Enter password">
+            </div>
+            <button class="btn" id="login-btn" style="width: 100%;">Login</button>
+            <button class="btn" id="close-login" style="width: 100%; margin-top: 10px; background: #666;">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <section class="admin-panel" id="admin-panel">
+        <div class="admin-header">
+            <h2>Admin Panel</h2>
+            <button class="btn" id="close-admin">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+        
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="news-management">News Management</button>
+            <button class="admin-tab" data-tab="awards-management">Awards Management</button>
+            <button class="admin-tab" data-tab="user-management">User Management</button>
+            <button class="admin-tab" data-tab="analytics">Analytics</button>
+            <button class="admin-tab" data-tab="site-settings">Site Settings</button>
+        </div>
+        
+        <div class="admin-content active" id="news-management">
+            <h3>Manage News Content</h3>
+            <div class="admin-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="news-title">News Title</label>
+                        <input type="text" id="news-title" class="form-control" placeholder="Enter news title">
+                    </div>
+                    <div class="form-group">
+                        <label for="news-category">Category</label>
+                        <select id="news-category" class="form-control">
+                            <option value="business">Business</option>
+                            <option value="awards">Awards</option>
+                            <option value="innovation">Innovation</option>
+                            <option value="sustainability">Sustainability</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="news-content">Content</label>
+                    <textarea id="news-content" class="form-control" rows="5" placeholder="Enter news content"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="news-image">Image URL</label>
+                    <input type="text" id="news-image" class="form-control" placeholder="Enter image URL">
+                </div>
+                <button class="btn">Publish News</button>
+            </div>
+            
+            <h3 class="mt-4">Existing News</h3>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>African Business Awards 2023 Winners</td>
+                        <td>Awards</td>
+                        <td>Oct 15, 2023</td>
+                        <td>
+                            <button class="action-btn edit-btn">Edit</button>
+                            <button class="action-btn delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Top African Startups to Watch</td>
+                        <td>Business</td>
+                        <td>Oct 12, 2023</td>
+                        <td>
+                            <button class="action-btn edit-btn">Edit</button>
+                            <button class="action-btn delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="admin-content" id="awards-management">
+            <h3>Manage Awards</h3>
+            <div class="admin-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="award-name">Award Name</label>
+                        <input type="text" id="award-name" class="form-control" placeholder="Enter award name">
+                    </div>
+                    <div class="form-group">
+                        <label for="award-year">Year</label>
+                        <input type="number" id="award-year" class="form-control" placeholder="2023" value="2023">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="award-description">Description</label>
+                    <textarea id="award-description" class="form-control" rows="3" placeholder="Enter award description"></textarea>
+                </div>
+                <button class="btn">Add Award</button>
+            </div>
+            
+            <h3 class="mt-4">Existing Awards</h3>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Award Name</th>
+                        <th>Year</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Business Innovation Award</td>
+                        <td>2023</td>
+                        <td>Active</td>
+                        <td>
+                            <button class="action-btn edit-btn">Edit</button>
+                            <button class="action-btn delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sustainability Leadership Award</td>
+                        <td>2023</td>
+                        <td>Active</td>
+                        <td>
+                            <button class="action-btn edit-btn">Edit</button>
+                            <button class="action-btn delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="admin-content" id="user-management">
+            <h3>User Management</h3>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>admin</td>
+                        <td>admin@hipzmultimedia.com</td>
+                        <td>Administrator</td>
+                        <td>Active</td>
+                        <td>
+                            <button class="action-btn edit-btn">Edit</button>
+                            <button class="action-btn delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>editor1</td>
+                        <td>editor@hipzmultimedia.com</td>
+                        <td>Editor</td>
+                        <td>Active</td>
+                        <td>
+                            <button class="action-btn edit-btn">Edit</button>
+                            <button class="action-btn delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="admin-content" id="analytics">
+            <h3>Website Analytics</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">15,842</div>
+                    <div class="stat-label">Total Visitors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4,521</div>
+                    <div class="stat-label">Page Views</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2.8</div>
+                    <div class="stat-label">Avg. Session Duration</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">42%</div>
+                    <div class="stat-label">Bounce Rate</div>
+                </div>
+            </div>
+            
+            <h3 class="mt-4">Popular Content</h3>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Page</th>
+                        <th>Views</th>
+                        <th>Unique Visitors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>African Business Awards 2023</td>
+                        <td>3,452</td>
+                        <td>2,841</td>
+                    </tr>
+                    <tr>
+                        <td>Top Startups to Watch</td>
+                        <td>2,187</td>
+                        <td>1,754</td>
+                    </tr>
+                    <tr>
+                        <td>Investment Opportunities</td>
+                        <td>1,923</td>
+                        <td>1,542</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="admin-content" id="site-settings">
+            <h3>Site Settings</h3>
+            <div class="admin-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="site-title">Site Title</label>
+                        <input type="text" id="site-title" class="form-control" value="Hipz Multimedia">
+                    </div>
+                    <div class="form-group">
+                        <label for="site-tagline">Site Tagline</label>
+                        <input type="text" id="site-tagline" class="form-control" value="African Business Awards News & Media">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="primary-color">Primary Color</label>
+                    <input type="color" id="primary-color" class="form-control" value="#DC143C">
+                </div>
+                <div class="form-group">
+                    <label for="logo-url">Logo URL</label>
+                    <input type="text" id="logo-url" class="form-control" placeholder="Enter logo URL">
+                </div>
+                <div class="form-group">
+                    <label for="facebook-url">Facebook URL</label>
+                    <input type="text" id="facebook-url" class="form-control" value="https://www.facebook.com/TheNatureNewspaper/">
+                </div>
+                <button class="btn">Save Settings</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>HIPZ MULTIMEDIA</h2>
+                <p>Your trusted source for African Business Awards news, featuring exclusive coverage of entrepreneurship, innovation, and business excellence across Africa.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Awards</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Innovation</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Finance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Business Avenue, Lagos, Nigeria</p>
+                <p><i class="fas fa-phone"></i> +234 123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@hipzmultimedia.com</p>
+                <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Hipz Multimedia. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> for African Business Excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        });
+
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Admin tab functionality
+        document.querySelectorAll('.admin-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.admin-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Search toggle
+        document.getElementById('search-toggle').addEventListener('click', () => {
+            document.getElementById('search-container').classList.toggle('hidden');
+        });
+
+        // Admin login
+        document.getElementById('admin-login-btn').addEventListener('click', () => {
+            document.getElementById('login-modal').classList.add('active');
+        });
+
+        // Close login modal
+        document.getElementById('close-login').addEventListener('click', () => {
+            document.getElementById('login-modal').classList.remove('active');
+        });
+
+        // Login functionality
+        document.getElementById('login-btn').addEventListener('click', () => {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple authentication (in a real app, this would be server-side)
+            if (username === 'admin' && password === 'admin123') {
+                document.getElementById('login-modal').classList.remove('active');
+                document.getElementById('admin-panel').classList.add('active');
+                // Clear form
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            } else {
+                alert('Invalid credentials. Try admin/admin123');
+            }
+        });
+
+        // Close admin panel
+        document.getElementById('close-admin').addEventListener('click', () => {
+            document.getElementById('admin-panel').classList.remove('active');
+        });
+
+        // Funding region filter
+        document.querySelectorAll('.funding-region-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                document.querySelectorAll('.funding-region-btn').forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const region = btn.getAttribute('data-region');
+                
+                // Show/hide funding cards based on region
+                document.querySelectorAll('.funding-card').forEach(card => {
+                    if (region === 'all' || card.getAttribute('data-region') === region) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // TV channel selection
+        document.querySelectorAll('.tv-channel').forEach(channel => {
+            channel.addEventListener('click', () => {
+                // Remove active class from all channels
+                document.querySelectorAll('.tv-channel').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked channel
+                channel.classList.add('active');
+            });
+        });
+
+        // Theme toggle
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const icon = document.getElementById('theme-toggle').querySelector('i');
+            if (document.body.classList.contains('dark-theme')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Featured News Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show the selected slide
+            slides[n].classList.add('active');
+            dots[n].classList.add('active');
+            currentSlide = n;
+        }
+        
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Auto-advance slides
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Trending items rotation
+        const trendingItems = document.querySelectorAll('.trending-item');
+        let currentTrending = 0;
+        
+        function rotateTrending() {
+            trendingItems.forEach(item => item.style.display = 'none');
+            trendingItems[currentTrending].style.display = 'flex';
+            currentTrending = (currentTrending + 1) % trendingItems.length;
+        }
+        
+        // Show first item initially
+        if (trendingItems.length > 0) {
+            trendingItems[0].style.display = 'flex';
+            for (let i = 1; i < trendingItems.length; i++) {
+                trendingItems[i].style.display = 'none';
+            }
+            
+            // Rotate every 5 seconds
+            setInterval(rotateTrending, 5000);
+        }
+
+        // WhatsApp button functionality
+        document.getElementById('whatsapp-btn').addEventListener('click', () => {
+            window.open('https://wa.me/?text=Check out Hipz Multimedia for African business awards news!', '_blank');
+        });
+
+        // AI Assistant button functionality
+        document.getElementById('ai-btn').addEventListener('click', () => {
+            alert('AI Assistant feature coming soon! This will provide personalized business insights and recommendations.');
+        });
+
+        // Initialize with dark theme styles
+        const darkThemeStyles = `
+            <style id="dark-theme">
+                body.dark-theme {
+                    --background: #121212;
+                    --foreground: #e0e0e0;
+                    --muted: #a0a0a0;
+                    --border: #333;
+                    --white: #1e1e1e;
+                    --dark: #000;
+                }
+                
+                body.dark-theme .card {
+                    background: #1e1e1e;
+                    color: #e0e0e0;
+                }
+                
+                body.dark-theme .main-content::before {
+                    background: rgba(30, 30, 30, 0.92);
+                }
+                
+                body.dark-theme .form-control {
+                    background: #2d2d2d;
+                    border-color: #444;
+                    color: #e0e0e0;
+                }
+                
+                body.dark-theme .admin-table th {
+                    background: #2d2d2d;
+                }
+                
+                body.dark-theme .admin-table tr:hover {
+                    background: #2d2d2d;
+                }
+            </style>
+        `;
+        document.head.insertAdjacentHTML('beforeend', darkThemeStyles);
+    </script>
+</body>
+</html>
