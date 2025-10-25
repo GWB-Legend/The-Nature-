@@ -210,7 +210,7 @@
         }
 
         .mobile-menu a {
-            color: var(--dark);
+            color: var(--211, 211, 211);
             text-decoration: none;
             font-size: 16px;
             font-weight: 600;
@@ -222,7 +222,7 @@
 
         /* Exclusive Banner */
         .exclusive-banner {
-            background: var(--exclusive-bg); /* Changed to #d3d3d3 */
+            background: var(--UPDATE-bg); /* Changed to #d3d3d3 */
             color: var(--dark);
             padding: 12px 0;
             overflow: hidden;
@@ -255,8 +255,8 @@
         }
 
         @keyframes scroll-text {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% { transform: translateX(50); }
+            100% { transform: translateX(0%); }
         }
 
         /* Main Content Area */
@@ -1025,7 +1025,7 @@
         }
         
         .btn-secondary {
-            background: var(--blue);
+            background: var(--#d3d3d3);
             color: white;
         }
         
@@ -1111,7 +1111,7 @@
         .search-bar:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+            box-shadow: 0 0 0 3px rgb(211, 211, 211);
         }
         
         .search-btn {
@@ -1150,7 +1150,7 @@
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: #1DA1F2;
+            background: #1da1f2;
             border-radius: 12px;
             transition: transform 0.3s;
         }
@@ -1221,7 +1221,7 @@
         
         .article-category {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--211, 211, 211) 100%);
+            background: linear-gradient(135deg, var(--211, 211, 211) 0%, var(--211, 211, 211) 100%);
             color: var(--dark);
             padding: 6px 14px;
             border-radius: 20px;
@@ -1420,7 +1420,7 @@
             justify-content: space-around;
             margin-top: 20px;
             padding-top: 20px;
-            border-top: 1px solid rgba(29, 161, 242);
+            border-top: 1px solid rgb(211, 211, 211);
         }
 
         .funding-icon {
@@ -1430,7 +1430,7 @@
 
         /* TV Section */
         .tv-section {
-            background: var(--primary);
+            background: var(--211, 211, 211);
             color: var(--dark);
             padding: 70px 0;
             margin: 60px 0;
@@ -1466,7 +1466,7 @@
         }
 
         .tv-player {
-            background: rgba(29, 161, 242);
+            background: rgb(211, 211, 211);
             border-radius: 15px;
             padding: 30px;
             margin: 30px 0;
@@ -1533,7 +1533,7 @@
 
         .tv-channel.active {
             background: white;
-            color: var(--primary);
+            color: var(--211, 211, 211);
             transform: scale(1.05);
         }
 
@@ -1593,14 +1593,14 @@
         }
 
         .pdf-download {
-            color: var(--primary);
+            color: var(--29, 161, 242);
             cursor: pointer;
             font-size: 1.2rem;
             transition: color 0.3s;
         }
 
         .pdf-download:hover {
-            color: var(--primary-dark);
+            color: var(--29, 161, 242);
         }
 
         .empty-state {
@@ -1683,7 +1683,7 @@
 
         /* Footer */
         .footer {
-            background: var(--dark);
+            background: var(--211, 211, 211);
             color: white;
             padding: 60px 0 30px;
         }
@@ -1823,14 +1823,14 @@
         }
 
         .ai-message.user {
-            background: var(--primary);
+            background: var(--211, 211, 211);
             color: var(--dark);
             margin-left: auto;
             border-bottom-right-radius: 5px;
         }
 
         .ai-message.bot {
-            background: #f0f0f0;
+            background: #d3d3d3;
             color: var(--foreground);
             border-bottom-left-radius: 5px;
         }
@@ -1838,13 +1838,13 @@
         .ai-input {
             display: flex;
             padding: 15px;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #d3d3d3;
         }
 
         .ai-input input {
             flex: 1;
             padding: 10px 15px;
-            border: 1px solid #ddd;
+            border: 1px solid #d3d3d3;
             border-radius: 25px;
             outline: none;
         }
@@ -1865,10 +1865,10 @@
 
         /* Weather Widget */
         .weather-widget {
-            background: white;
+            background: rgb(211, 211, 211);
             border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 5px 20px rgb(211, 211, 211);
+            box-shadow: 0 5px 20px rgb(29, 161, 242);
             margin-bottom: 30px;
         }
 
@@ -1885,8 +1885,8 @@
         }
 
         .weather-refresh {
-            background: var(--primary);
-            color: var(--dark);
+            background: var(--211, 211, 211);
+            color: var(--211, 211, 211);
             border: none;
             border-radius: 50%;
             width: 30px;
@@ -1928,7 +1928,7 @@
 
         .weather-detail i {
             margin-right: 8px;
-            color: var(--primary);
+            color: var(--211, 211, 211);
             width: 16px;
         }
 
@@ -1966,7 +1966,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--primary);
+            background: var(--211, 211, 211);
             border-radius: 2px;
         }
 
@@ -2003,7 +2003,7 @@
         }
 
         .modal-content {
-            background: white;
+            background: rgb(211, 211, 211);
             border-radius: 15px;
             width: 90%;
             max-width: 800px;
@@ -2021,11 +2021,11 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--muted);
+            color: var(--211, 211, 211);
         }
 
         .modal-close:hover {
-            color: var(--foreground);
+            color: var(--211, 211, 211);
         }
 
         .modal-image {
@@ -2043,7 +2043,7 @@
         }
 
         .modal-date {
-            color: var(--muted);
+            color: var(--211, 211, 211);
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -2071,7 +2071,7 @@
         }
 
         .fundraising-card {
-            background: #1DA1F2;
+            background: #d3d3d3;
             border-radius: 12px;
             overflow: hidden;
             transition: transform 0.3s;
@@ -2109,7 +2109,7 @@
         }
 
         .fundraising-description {
-            color: var(--muted);
+            color: var(--#d3d3d3);
             margin-bottom: 20px;
             line-height: 1.6;
         }
@@ -2123,7 +2123,7 @@
 
         .fundraising-progress {
             height: 8px;
-            background: #1DA1F2;
+            background: #d3d3d3;
             border-radius: 4px;
             overflow: hidden;
             margin-bottom: 20px;
@@ -2137,7 +2137,7 @@
 
         /* Donate Section */
         .donate-section {
-            background: white;
+            background: rgb(211, 211, 211);
             padding: 50px 0;
             margin: 50px 0;
             border-radius: 15px;
@@ -2182,8 +2182,8 @@
         }
 
         .donate-option {
-            background: #1DA1F2;
-            border: 2px solid #1DA1F2
+            background: #d18888;
+            border: 2px solid #d18888
 ;
             border-radius: 8px;
             padding: 15px;
@@ -2193,12 +2193,12 @@
         }
 
         .donate-option:hover {
-            border-color: var(--primary);
+            border-color: var(--211, 211, 211);
             transform: translateY(-3px);
         }
 
         .donate-option.active {
-            border-color: var(--primary);
+            border-color: var(--211, 211, 211);
             background: rgba(29, 161, 242);
         }
 
@@ -2252,8 +2252,8 @@
         }
 
         .share-link {
-            background: var(--primary);
-            color: var(--dark);
+            background: var(--#d3d3d3);
+            color: var(--#d3d3d3);
         }
 
         .share-modal {
@@ -2263,7 +2263,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgb(211, 211, 211);
             z-index: 3000;
             align-items: center;
             justify-content: center;
@@ -2284,11 +2284,11 @@
 
         .share-modal-title {
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--211, 211, 211);
         }
 
         .share-url {
-            background: #f5f5f5;
+            background: #d3d3d3;
             padding: 12px;
             border-radius: 6px;
             margin: 20px 0;
@@ -2297,8 +2297,8 @@
         }
 
         .copy-btn {
-            background: var(--primary);
-            color: var(--dark);
+            background: var(--211, 211, 211);
+            color: var(--211, 211, 211);
             border: none;
             padding: 10px 20px;
             border-radius: 6px;
@@ -2308,7 +2308,7 @@
         }
 
         .copy-btn:hover {
-            background: var(--primary-dark);
+            background: var(--211, 211, 211);
         }
 
         /* Responsive Adjustments */
@@ -5180,55 +5180,55 @@
                 }
                 
                 body.dark-theme .card {
-                    background: #1e1e1e;
-                    color: #e0e0e0;
+                    background: #d3d3d3;
+                    color: #d3d3d3;
                 }
                 
                 body.dark-theme .main-content::before {
-                    background: rgba(30, 30, 30, 0.92);
+                    background: rgb(211, 211, 211);
                 }
                 
                 body.dark-theme .form-control {
-                    background: #2d2d2d;
-                    border-color: #444;
+                    background: #d3d3d3;
+                    border-color: #d3d3d3;
                     color: #e0e0e0;
                 }
                 
                 body.dark-theme .admin-table th {
-                    background: #2d2d2d;
+                    background: #d3d3d3;
                 }
                 
                 body.dark-theme .admin-table tr:hover {
-                    background: #2d2d2d;
+                    background: #d3d3d3;
                 }
                 
                 body.dark-theme .weather-widget {
-                    background: #1e1e1e;
-                    color: #e0e0e0;
+                    background: #d3d3d3;
+                    color: #d3d3d3;
                 }
                 
                 body.dark-theme .ai-assistant {
-                    background: #1e1e1e;
-                    color: #e0e0e0;
+                    background: #d3d3d3;
+                    color: #d3d3d3;
                 }
                 
                 body.dark-theme .ai-message.bot {
-                    background: #2d2d2d;
-                    color: #e0e0e0;
+                    background: #d3d3d3;
+                    color: #d3d3d3;
                 }
                 
                 body.dark-theme .modal-content {
-                    background: #1e1e1e;
-                    color: #e0e0e0;
+                    background: #d3d3d3;
+                    color: #d3d3d3;
                 }
                 
                 body.dark-theme .fundraising-card {
-                    background: #2d2d2d;
+                    background: #d3d3d3;
                 }
                 
                 body.dark-theme .donate-option {
-                    background: #2d2d2d;
-                    border-color: #444;
+                    background: #d3d3d3;
+                    border-color: #d3d3d3;
                 }
             </style>
         `;
